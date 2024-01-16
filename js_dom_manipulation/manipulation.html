@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>DOM Manipulation</title>
+    </head>
+    <body>
+        <h1 id="message">Hello World</h1>
+        <button onclick="change()">Click Me</button>
+    </body>
+</html>
+
+<script>
+    var heading1 = document.getElementById('message')
+    console.log(heading1.textContent)
+    function change() {
+        heading1.textContent = 'Hello Javascript!'
+    }
+</script>
