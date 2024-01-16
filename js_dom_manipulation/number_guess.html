@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Number Guess</title>
+    </head>
+    <body>
+        <h1>Guess the Number between 1 to 10</h1>
+        <input id="number-guess"></input>
+        <button id="btn-check" onclick="numberGuess()">Check</button>
+        <p id="result">You're result will shown here!!</p>
+        <p id="chance">Chance: 10</p>
+    </body>
+</html>
+
+<script>
+    var generated_number = Math.random()
+    var random_number = Math.floor(generated_number * 10) + 1
+    var number = document.getElementById("number-guess")
+    var result = document.getElementById("result")
+    var chance = document.getElementById("chance")
+    var score = 10
+function numberGuess(){
+    var guess_number = Number(number.value)
+    if(random_number == guess_number){
+        result.textContent = "You are Right!"
+        alert("Congratulations! you have Won!!")
+    } else{
+        score = score - 1
+        chance.textContent = "Chance: "+score
+        result.textContent = "You are Wrong!"
+        if(score == 0){
+            alert("Sorry! you have reached the limit")
+        }
+    }
+}
+</script>
