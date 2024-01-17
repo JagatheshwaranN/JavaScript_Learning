@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Name Show</title>
+    </head>
+    <body>
+        <h1 id="show">Color</h1>
+        <button onclick="display(event)">Red</button>
+        <button onclick="display(event)">Green</button>
+        <button onclick="display(event)">Blue</button>
+    </body>
+</html>
+
+<script>
+     var header = document.getElementById("show")
+    function display(){  
+        header.textContent = event.target.textContent
+    }
+</script>
