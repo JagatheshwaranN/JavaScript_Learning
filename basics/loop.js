@@ -20,3 +20,8 @@ var table = 2
 for(count = 1; count <= 10; count++){
     console.log(count + 'x' + table + '=' + count * table )
 }
+
+var fruits = ['Apple', 'Orange', 'Grapes', 'Mango', 'Banana']
+for(count = 0; count < fruits.length; count++){
+    console.log(fruits[count])
+}

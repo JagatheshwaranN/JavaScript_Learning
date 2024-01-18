@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Todo List</title>
+    </head>
+    <body>
+        <div id="container">
+            <input id="user-input">
+            <button id="btn-add" onclick="add_todo()">Add</button>
+            <ul class="list-container">
+            </ul>
+        </div>
+    </body>
+</html>
+
+<script>
+    var user_input = document.getElementById("user-input")
+    var list_container = document.querySelector(".list-container")
+    function add_todo(){
+        var list_item = document.createElement("li")
+        list_item.innerHTML = user_input.value +
+        "<button onclick='delete_list_item(event)'>Delete</button>"
+        list_container.append(list_item)
+    }
+    function delete_list_item(event){
+        event.target.parentElement.remove()
+    }
+</script>
