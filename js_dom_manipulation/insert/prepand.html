@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>
+            Element Insertion
+        </title>
+    </head>
+    <body>
+        <div id="section">
+            <h1>Apple</h1>
+        </div>
+    </body>
+</html>
+
+<script>
+    var section = document.querySelector("#section")
+    var h1 = document.createElement("h1")
+    h1.textContent = "Orange"
+    section.prepend(h1)
+</script>

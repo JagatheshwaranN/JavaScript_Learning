@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Query Selector</title>
+    </head>
+    <body>
+        <div id="section1">
+            <p id="one">One</p>
+            <p class="two">Two</p>
+            <button>Click Me</button>
+        </div>
+        <hr>
+        <div id="section2">
+            <h2 id="header">Apple</h2>
+            <h2 id="header">Orange</h2>
+            <h2 id="header">Banana</h2>
+        </div>
+        <hr>
+        <div id="section3">
+            <p class="box1">Green Box</p>
+            <p class="box2">Blue Box</p>
+        </div>
+    </body>
+</html>
+
+<script>
+    var para1 = document.querySelector("#one")
+    console.log(para1.textContent)
+    
+    var para2 = document.querySelector(".two")
+    console.log(para2.textContent)
+    
+    var btn = document.querySelector("button")
+    console.log(btn.textContent)
+    
+    var header = document.querySelectorAll("#header")
+    for(count=0;count<header.length;count++){
+        console.log(header[count].textContent)
+    }
+
+    var para3 = document.getElementsByClassName("box1")
+    console.log(para3[0].textContent)
+
+    var paraTags = document.getElementsByTagName("p")
+    for(count=0;count<paraTags.length;count++){
+        console.log(paraTags[count].textContent)
+    }
+</script>
