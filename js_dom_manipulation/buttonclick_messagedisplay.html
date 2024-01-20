@@ -1,18 +1,21 @@
 <html>
-    <head>
-        <title>
-            Display Message For Every Button Click
-        </title>
-    </head>
-    <body>
-        <button id="show" onclick="display()">Display</button>
-        <div id="heading"></div>
-    </body>
+
+<head>
+    <title>
+        Display Message For Every Button Click
+    </title>
+</head>
+
+<body>
+    <button id="show" onclick="display()">Display</button>
+    <div id="heading"></div>
+</body>
+
 </html>
 
 <script>
     var section = document.getElementById("heading")
-    function display(){
+    function display() {
         var header = document.createElement("h1")
         header.textContent = "Welcome!"
         section.append(header)

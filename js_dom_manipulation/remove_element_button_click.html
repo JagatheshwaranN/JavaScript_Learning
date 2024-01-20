@@ -1,18 +1,21 @@
 <html>
-    <head>
-        <title>Remove Element On Button Click</title>
-    </head>
-    <body>
-        <h1 id="one" onclick="deleteElement(event)">One</h1>
-        <h1 id="two" onclick="deleteElement(event)">Two</h1>
-        <h1 id="three" onclick="deleteElement(event)">Three</h1>
-        <h1 id="four" onclick="deleteElement(event)">Four</h1>
-        <h1 id="five" onclick="deleteElement(event)">Five</h1>
-    </body>
+
+<head>
+    <title>Remove Element On Button Click</title>
+</head>
+
+<body>
+    <h1 id="one" onclick="deleteElement(event)">One</h1>
+    <h1 id="two" onclick="deleteElement(event)">Two</h1>
+    <h1 id="three" onclick="deleteElement(event)">Three</h1>
+    <h1 id="four" onclick="deleteElement(event)">Four</h1>
+    <h1 id="five" onclick="deleteElement(event)">Five</h1>
+</body>
+
 </html>
 
 <script>
-    function deleteElement(event){
+    function deleteElement(event) {
         event.target.remove()
     }
 </script>

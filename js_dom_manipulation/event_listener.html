@@ -1,22 +1,25 @@
 <html>
-    <head>
-        <title>
-            Event Listener
-        </title>
-    </head>
-    <body>
-        <div id="container">
-            <button id="btn">Display</button>
-        </div>
-    </body>
+
+<head>
+    <title>
+        Event Listener
+    </title>
+</head>
+
+<body>
+    <div id="container">
+        <button id="btn">Display</button>
+    </div>
+</body>
+
 </html>
 
 <script>
     var button = document.getElementById("btn")
-    button.addEventListener("click", function(){
+    button.addEventListener("click", function () {
         alert("You clicked Display button")
     })
-    button.addEventListener("mouseover", function(){
+    button.addEventListener("mouseover", function () {
         alert("You hovered Display button")
     })
 </script>

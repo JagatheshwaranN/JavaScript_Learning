@@ -1,28 +1,32 @@
 <html>
-    <head>
-        <title>CSS Manipulation</title>
-    </head>
-    <body>
-        <style>
-            div{
-                background-color: yellow;
-                width: 100px;
-                height: 100px;
-                transition: 1s;
-            }
-            .updateWidth{
-                width: 500px;
-            }
-        </style>
-        <div id="box"></div>
-        <br>
-        <button onclick="change()">Change Color</button>
-    </body>
+
+<head>
+    <title>CSS Manipulation</title>
+</head>
+
+<body>
+    <style>
+        div {
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+            transition: 1s;
+        }
+
+        .updateWidth {
+            width: 500px;
+        }
+    </style>
+    <div id="box"></div>
+    <br>
+    <button onclick="change()">Change Color</button>
+</body>
+
 </html>
 
 <script>
     var box = document.getElementById("box")
-    function change(){
+    function change() {
         box.style.backgroundColor = "green"
         box.setAttribute("class", "updateWidth")
     }

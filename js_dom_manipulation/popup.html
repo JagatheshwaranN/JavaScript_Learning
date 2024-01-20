@@ -1,51 +1,56 @@
 <html>
-    <head>
-        <title>
-            Overlay Popup
-        </title>
-    </head>
-    <body>
-        <button onclick="show()">Show</button>
-        <div class="overlay"></div>
-        <div class="popup">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit voluptatibus eos aspernatur suscipit, nulla dolor quia voluptatum nisi autem! Quasi ratione minus tempora dolorem fugit soluta culpa eos hic ipsam.</p>
-            <button onclick="closePopup()">Close</button>
-        </div>
-    </body>
-    <style>
-        .overlay{
-            background-color: black;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            opacity: 0.8;
-            z-index: 1;
-            display: none;
-        }
-        .popup{
-            background-color: lightgoldenrodyellow;
-            color: black;
-            width: 40%;
-            position: absolute;
-            padding: 20px;
-            border-radius: 10px;
-            left: 30%;
-            z-index: 2;
-            display: none;
-        }
-    </style>
+
+<head>
+    <title>
+        Overlay Popup
+    </title>
+</head>
+
+<body>
+    <button onclick="show()">Show</button>
+    <div class="overlay"></div>
+    <div class="popup">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit voluptatibus eos aspernatur suscipit, nulla
+            dolor quia voluptatum nisi autem! Quasi ratione minus tempora dolorem fugit soluta culpa eos hic ipsam.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+</body>
+<style>
+    .overlay {
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        opacity: 0.8;
+        z-index: 1;
+        display: none;
+    }
+
+    .popup {
+        background-color: lightgoldenrodyellow;
+        color: black;
+        width: 40%;
+        position: absolute;
+        padding: 20px;
+        border-radius: 10px;
+        left: 30%;
+        z-index: 2;
+        display: none;
+    }
+</style>
+
 </html>
 
 <script>
     var overlay = document.querySelector(".overlay")
     var popup = document.querySelector(".popup")
-    function show(){
+    function show() {
         popup.style.display = "block"
         overlay.style.display = "block"
     }
-    function closePopup(){
+    function closePopup() {
         popup.style.display = "none"
         overlay.style.display = "none"
     }

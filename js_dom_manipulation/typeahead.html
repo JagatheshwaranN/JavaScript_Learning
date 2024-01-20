@@ -1,20 +1,23 @@
 <html>
-    <head>
-        <title>
-            TypeAhead Suggestion
-        </title>
-    </head>
-    <body>
-        <!--<input id="type-ahead" oninput="showText()">-->
-        <input id="type-ahead" onkeyup="showText()">
-        <h1 id="show"></h1>
-    </body>
+
+<head>
+    <title>
+        TypeAhead Suggestion
+    </title>
+</head>
+
+<body>
+    <!--<input id="type-ahead" oninput="showText()">-->
+    <input id="type-ahead" onkeyup="showText()">
+    <h1 id="show"></h1>
+</body>
+
 </html>
 
 <script>
     var input = document.getElementById("type-ahead")
     var header = document.getElementById("show")
-    function showText(){
+    function showText() {
         var typeValue = input.value
         header.textContent = typeValue
     }
