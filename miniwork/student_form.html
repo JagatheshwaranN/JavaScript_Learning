@@ -1,18 +1,20 @@
 <html>
 
 <head>
-    <titl>
+    <title>
         Student Form
-    </titl>
+    </title>
 </head>
 
 <body>
-    <table border="1" width="25%" height="300px" align="center">
+    <!-- Form Table -->
+    <table border="1" width="25%" height="300px" align="center" style="margin-bottom: 20px;">
         <tr id="head">
             <th colspan="2">
                 <font size="5">Student Form</font>
             </th>
         </tr>
+        <!-- Name Input -->
         <tr>
             <th>
                 <label>Name</label>
@@ -21,6 +23,7 @@
                 <input id="name">
             </th>
         </tr>
+        <!-- Age Input -->
         <tr>
             <th>
                 <label>Age</label>
@@ -29,15 +32,17 @@
                 <input id="age">
             </th>
         </tr>
+        <!-- Gender Radio Buttons -->
         <tr>
             <th>
                 <label>Gender</label>
             </th>
             <th align="left">
-                <input type="radio" id="male">Male</input>
-                <input type="radio" id="female">Female</input>
+                <input type="radio" id="male" name="gender" value="Male">Male</input>
+                <input type="radio" id="female" name="gender" value="Female">Female</input>
             </th>
         </tr>
+        <!-- Course Selection -->
         <tr>
             <th>
                 <label>Course</label>
@@ -49,30 +54,61 @@
                 </select>
             </th>
         </tr>
+        <!-- Email Input -->
         <tr>
             <th>
-                <lable>Email</lable>
+                <label>Email</label>
             </th>
             <th>
-                <input type="email" id="email">
+                <input type="email" id="email-id">
             </th>
         </tr>
+        <!-- Save Button -->
         <tr>
             <th colspan="2">
-                <button id="save">Save</button>
+                <button id="save" onclick="save_student()">Save</button>
             </th>
         </tr>
     </table>
+
+    <!-- Display Table -->
+    <div id="display-grid" style="margin-top: 20px;">
+        <table id="result" border="1" width="40%" height="70px" align="center" style="margin-top: 20px;">
+            <tr id="tr-result">
+                <!-- Result Table Headers -->
+                <th id="th-result">
+                    <label>Name</label>
+                </th>
+                <th id="th-result">
+                    <label>Age</label>
+                </th>
+                <th id="th-result">
+                    <label>Gender</label>
+                </th>
+                <th id="th-result">
+                    <label>Course</label>
+                </th>
+                <th id="th-result">
+                    <label>Email</label>
+                </th>
+                <th id="th-result">
+                    <label>Action</label>
+                </th>
+            </tr>
+        </table>
+    </div>
 </body>
+
 <style>
+    /* Styles for the Form and Display Tables */
     tr[id=head] {
-        text-align: "center";
+        text-align: center;
         background-color: yellow;
     }
 
     input[id=name],
     input[id=age],
-    [id=email],
+    [id=email-id],
     [id="course"],
     [id="save"] {
         width: 100%;
@@ -82,14 +118,67 @@
         line-height: 1;
     }
 
-    th input[type="radio"] {
+    th input[type=radio] {
         padding: 0px;
         text-align: left;
     }
 
-    button {
+    button[id=save] {
         background-color: lightgreen;
     }
 </style>
+
+<script>
+    // JavaScript Code for Form Handling
+    var student_name = document.getElementById("name")
+    var student_age = document.getElementById("age")
+    var student_course = document.getElementById("course")
+    var student_email = document.getElementById("email-id")
+    var result_table = document.getElementById("result")
+
+    function save_student() {
+        // Retrieve values from form inputs
+        var student_gender = document.querySelector('input[name="gender"]:checked');
+        var name = student_name.value
+        var age = student_age.value
+        var gender = student_gender ? student_gender.value : "";
+        var course = student_course.options[student_course.selectedIndex].textContent
+        var email = student_email.value
+
+        // Create a new row in the result table
+        var table_row = document.createElement("tr")
+        table_row.innerHTML =
+            "<th>" + name + "</th>" +
+            "<th>" + age + "</th>" +
+            "<th>" + gender + "</th>" +
+            "<th>" + course + "</th>" +
+            "<th>" + email + "</th>"
+
+        // Create a 'Delete' button and add it to the row
+        var delete_button = document.createElement("button")
+        delete_button.textContent = "Delete"
+        delete_button.style.backgroundColor = "red"
+        var last_cell = document.createElement("th")
+        last_cell.append(delete_button)
+        table_row.append(last_cell)
+
+        // Add the new row to the result table
+        result_table.append(table_row)
+
+        // Add an event listener to the 'Delete' button
+        delete_button.addEventListener("click", function () {
+            result_table.removeChild(table_row)
+        })
+
+        // Reset form inputs after saving
+        document.getElementById("name").value = "";
+        document.getElementById("age").value = "";
+        if (student_gender) {
+            student_gender.checked = false;
+        }
+        document.getElementById("course").selectedIndex = 0;
+        document.getElementById("email-id").value = "";
+    }
+</script>
 
 </html>
