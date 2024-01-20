@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character set and viewport settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the web page -->
+    <title>Book Snap</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link to Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <div id="nav-bar">
+        <h1>BookSnap</h1>
+    </div>
+
+    <!-- Main content container -->
+    <div class="container">
+        <!-- Book information container -->
+        <div class="book-container">
+            <h2>Rich Dad Poor Dad</h2>
+            <h5>Robert T. Kiyosaki</h5>
+            <p>
+                "Rich Dad Poor Dad" by Robert T. Kiyosaki contrasts financial philosophies, offering insights into
+                wealth-building through smart investing and financial education, emphasizing the importance of financial
+                literacy.
+            </p>
+            <!-- Button to delete the book -->
+            <button onclick="deleteBook(event)">Delete</button>
+        </div>
+    </div>
+
+    <!-- Overlay for pop-up modal -->
+    <div class="overlay"></div>
+    <!-- Pop-up modal for adding a new book -->
+    <div class="popup-modal">
+        <h2>Add Book</h2>
+        <!-- Form for adding a new book -->
+        <form>
+            <input type="text" placeholder="Book Title" id="book-title">
+            <input type="text" placeholder="Book Author" id="book-author">
+            <textarea placeholder="Book Summary" id="book-summary"></textarea>
+            <!-- Buttons for adding or canceling the new book -->
+            <button id="add-book">Add</button>
+            <button id="cancel-popup-modal">Cancel</button>
+        </form>
+    </div>
+
+    <!-- Bottom section with add button -->
+    <div id="bottom">
+        <button id="add-popup" class="add-btn">+</button>
+    </div>
+
+    <!-- Script tag to include JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>

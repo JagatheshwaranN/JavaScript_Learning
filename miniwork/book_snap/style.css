@@ -1,0 +1,140 @@
+/* Resetting margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Setting font family for the entire body */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Styling for the navigation bar */
+#nav-bar {
+    background-color: aquamarine;
+    padding: 10px;
+}
+
+/* Container styling with padding */
+.container {
+    padding: 10px;
+}
+
+/* Styling for the book container */
+.book-container {
+    padding: 15px;
+    width: 25%;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    margin: 30px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* Styling for the book title */
+.book-container h2 {
+    color: aquamarine;
+}
+
+/* Styling for the delete button */
+.book-container button {
+    background-color: aquamarine;
+    color: black;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    margin-top: 10px;
+}
+
+/* Styling for the add button at the bottom */
+.add-btn {
+    background-color: aquamarine;
+    color: black;
+    border-radius: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 30px;
+    border: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+/* Styling for the overlay */
+.overlay {
+    background-color: black;
+    opacity: 0.8;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+
+/* Styling for the pop-up modal */
+.popup-modal {
+    background-color: aquamarine;
+    width: 40%;
+    padding: 40px;
+    border-radius: 10px;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    z-index: 2;
+    display: none;
+}
+
+/* Styling for input fields in the pop-up modal */
+.popup-modal input {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px;
+    border-bottom: solid black 2px;
+}
+
+/* Styling for textarea in the pop-up modal */
+.popup-modal textarea {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px;
+    border: solid black 2px;
+}
+
+/* Styling for input and textarea placeholders */
+.popup-modal input::placeholder,
+textarea::placeholder {
+    color: black;
+}
+
+/* Styling for input and textarea focus */
+.popup-modal input:focus,
+textarea:focus {
+    outline: none;
+}
+
+/* Styling for buttons in the pop-up modal */
+.popup-modal button {
+    background-color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    margin: 5px;
+    color: aquamarine;
+    border-radius: 0px;
+}
