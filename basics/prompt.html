@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt</title>
+</head>
+
+<body>
+</body>
+
+</html>
+<script>
+    var food_amount = Number(prompt('What is the amount of the food'))
+    var tip_percent = Number(prompt('What is the amount of the tip you wish to give')) / 100
+    var tip_amount = food_amount * tip_percent
+    var total_amount = food_amount + tip_amount
+    console.log("Tip Amount : " + tip_amount)
+    alert("Tip Amount : " + tip_amount)
+    console.log("Total Amount : " + total_amount)
+    alert("Total Amount Spent : " + total_amount)
+</script>

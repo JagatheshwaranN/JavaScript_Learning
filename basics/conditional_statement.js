@@ -33,3 +33,11 @@ if(char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u') {
 }else{
     console.log(char + " is a consonant")
 }
+
+// ==, ===, !==, !=, <, >, <=, >=
+let weather = 'rain'
+if(weather == 'rain'){
+    console.log('Take your umberlla')
+}else{
+    console.log('Wear your Sunglass')
+}
