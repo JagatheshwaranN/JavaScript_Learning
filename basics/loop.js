@@ -25,3 +25,8 @@ var fruits = ['Apple', 'Orange', 'Grapes', 'Mango', 'Banana']
 for(count = 0; count < fruits.length; count++){
     console.log(fruits[count])
 }
+
+// Enhanced For Loop
+for( const fruit of fruits){
+    console.log(fruit)
+}
