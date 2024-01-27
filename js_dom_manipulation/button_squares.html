@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squares</title>
+</head>
+
+<body>
+    <div id="parent" style="display: flex;">
+        <button id="red" class="colorSquare" value="red"
+            style="width: 100px; height: 50px; background-color: red;"></button>
+        <button id="yellow" class="colorSquare" value="yellow"
+            style="width: 100px; height: 50px; background-color: yellow;"></button>
+        <button id="green" class="colorSquare" value="green"
+            style="width: 100px; height: 50px; background-color: green;"></button>
+    </div>
+    <div id="child" style="margin-top: 10px;">
+        <button id="clear" style="width: 100px; height: 30px;">Clear Value</button>
+    </div>
+</body>
+
+</html>
+<script>
+    const square_clicked = { "red": 0, "yellow": 0, "green": 0 }
+    let squares = document.querySelectorAll(".colorSquare")
+    let clearBtn = document.getElementById("clear")
+    squares.forEach(square => {
+        square.onclick = () => {
+            console.log(square.value)
+            square_clicked[square.value] += 1
+            square.innerText = square_clicked[square.value]
+        }
+    })
+    function clear_value(){
+        square_clicked.red = 0
+        square_clicked.yellow = 0
+        square_clicked.green = 0
+        squares.forEach(square => {
+            square.innerText = ''
+        })
+    }
+    clearBtn.onclick = () => clear_value()
+</script>

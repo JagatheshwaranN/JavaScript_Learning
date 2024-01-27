@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squares</title>
+</head>
+<body>
+    <div id="parent" style="display: flex;">
+        <div id="red" style="width: 100px; height: 100px; background-color: red;"></div>
+        <div id="yellow" style="width: 100px; height: 100px; background-color: yellow;"></div>
+        <div id="green" style="width: 100px; height: 100px; background-color: green;"></div>
+    </div>
+</body>
+</html>
+<script>
+    let red_div = document.getElementById("red")
+    let yellow_div = document.getElementById("yellow")
+    let green_div = document.getElementById("green")
+
+    red_div.onclick = () => console.log("red")
+    yellow_div.onclick = () => console.log("yellow")
+    green_div.onclick = () => console.log("green")
+</script>
