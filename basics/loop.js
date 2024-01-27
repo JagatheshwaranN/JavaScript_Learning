@@ -41,16 +41,16 @@ const double = (numbers) => {
 
 console.log(double([1, 2, 3, 4, 5]))
 
-const sentence_printer = (sentence) => {
+const letter_printer = (sentence) => {
     for (const letter of sentence) {
         console.log(letter)
     }
 }
 
-sentence_printer('Hey! how are you?')
+letter_printer('Hey! how are you?')
 
 let result = 0
-const sentence_counter = (sentence) => {
+const letter_counter = (sentence) => {
     for (const letter in sentence) {
         // console.log(Number(letter) + 1)
         result = Number(letter) + 1
@@ -58,7 +58,7 @@ const sentence_counter = (sentence) => {
     return { result }
 }
 
-console.log(sentence_counter('Hey! how are you?'))
+console.log(letter_counter('Hey! how are you?'))
 
 let show = 0
 const sumArray = (numbers) => {

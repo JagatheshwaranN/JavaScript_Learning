@@ -42,3 +42,11 @@ var n1 = 10
 var n2 = 20
 var total = sum(n1, n2)
 console.log(total)
+
+const seconds_in_hours = (hour) => {
+    let minutes = hour * 60
+    let seconds = minutes * 60
+    return seconds
+}
+
+console.log(seconds_in_hours(2))
