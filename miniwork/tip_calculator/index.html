@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Set the character set and viewport for better compatibility -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link to Google Fonts (Poppins) for styling -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
+
+    <!-- Set compatibility mode for Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="style.css" type="text/css" />
+
+    <!-- Set the title of the HTML page -->
+    <title>Tip Calculator</title>
+</head>
+
+<body>
+    <!-- Main content wrapper -->
+    <div class="wrapper">
+        <!-- Container for Bill Total -->
+        <div class="container" id="topContainer">
+            <div class="title">Bill Total</div>
+            <!-- Input container for Bill Total -->
+            <div class="inputContainer">
+                <span>$</span>
+                <!-- Input field for Bill Total with event listener -->
+                <input type="text" id="billTotalInput" placeholder="0.00" onkeyup="calculateBill()" />
+            </div>
+        </div>
+
+        <!-- Container for Tip Percentage -->
+        <div class="container">
+            <div class="title">Tip</div>
+            <!-- Input container for Tip Percentage -->
+            <div class="inputContainer">
+                <span>%</span>
+                <!-- Input field for Tip Percentage with event listener -->
+                <input type="text" id="tipInput" placeholder="10" onkeyup="calculateBill()" />
+            </div>
+        </div>
+
+        <!-- Container for splitting the bill among people -->
+        <div class="container" id="bottom">
+            <!-- Container for number of people and controls -->
+            <div class="splitContainer">
+                <div class="title">People</div>
+                <div class="controls">
+                    <!-- Increase people button with event listener -->
+                    <span class="buttonContainer">
+                        <button class="splitButton" onclick="increasePeople()">
+                            <span class="buttonText">+</span>
+                        </button>
+                    </span>
+                    <!-- Display the number of people -->
+                    <span class="splitAmount" id="numberOfPeople">1</span>
+                    <!-- Decrease people button with event listener -->
+                    <span class="buttonContainer">
+                        <button class="splitButton" onclick="decreasePeople()">
+                            <span class="buttonText">-</span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Container for displaying total amount per person -->
+            <div class="totalContainer">
+                <div class="title">Total / Person</div>
+                <!-- Display the total amount per person -->
+                <div class="total" id="perPersonTotal">$0.00</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include external JavaScript file for functionality -->
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

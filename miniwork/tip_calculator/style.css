@@ -1,0 +1,112 @@
+/* Apply Poppins font to all elements and set text color to white */
+* {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+/* Set background color of the body */
+body {
+    background: #54526e;
+}
+
+/* Styling for the main content wrapper */
+.wrapper {
+    height: 525px;
+    width: 360px;
+    color: white;
+    background: #272639;
+    border-radius: 1rem;
+    padding: 1.2rem;
+    margin: 100px auto;
+}
+
+/* Adjust margin for the top container */
+#topContainer {
+    margin-top: 4rem;
+}
+
+/* Styling for general containers */
+.container {
+    margin-top: 1.4rem;
+}
+
+/* Styling for container titles */
+.title {
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+}
+
+/* Styling for input containers */
+.inputContainer {
+    background: #353959;
+    border-radius: 1.4rem;
+    padding: 0 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Styling for input fields */
+#billTotalInput,
+#tipInput {
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    outline: none;
+    padding: none;
+}
+
+/* Styling for button containers */
+.buttonContainer {
+    background: #8990ec;
+    display: grid;
+    place-items: center;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+}
+
+/* Styling for split buttons */
+.splitButton {
+    background: none;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: grid;
+    place-items: center;
+}
+
+/* Styling for control elements */
+.controls {
+    display: flex;
+    align-items: center;
+}
+
+/* Styling for button text */
+.buttonText {
+    color: #353959 !important;
+    /* Important to override previous color setting */
+}
+
+/* Styling for split amount display */
+.splitAmount {
+    font-size: 1.6rem;
+    margin: 0.8rem;
+}
+
+/* Styling for the bottom container */
+#bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Styling for total container */
+.totalContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+/* Styling for total amount display */
+.total {
+    font-size: 2rem;
+}
