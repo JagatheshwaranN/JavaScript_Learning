@@ -1,16 +1,16 @@
 // Object to store the total score, including player and system scores
-const totalScore = {'playerScore': 0, 'systemScore': 0 }
+const totalScore = { 'playerScore': 0, 'systemScore': 0 }
 
 // Function to get a random choice for the system (Rock, Paper, or Scissors)
 const getSystemChoice = () => {
   // Array containing possible choices for the system
-  let rps_choice = ['Rock', 'Paper', 'Scissors']
-  
+  let rpsChoice = ['Rock', 'Paper', 'Scissors']
+
   // Generate a random index to pick a choice from the array
-  const random_number = Math.floor(Math.random() * rps_choice.length)
-  
+  const randomNumber = Math.floor(Math.random() * rpsChoice.length)
+
   // Return the randomly chosen system's choice
-  return rps_choice[random_number]
+  return rpsChoice[randomNumber]
 }
 
 // Function to determine the result of a round based on player and system choices
@@ -42,20 +42,31 @@ function getResult(playerChoice, systemChoice) {
 
 // Function to display the result and update the UI
 function showResult(playerScore, playerChoice, systemChoice) {
-  // Get references to HTML elements for displaying scores and choices
+  // Retrieving HTML elements by their IDs to update game scores and display choices/results
+
+  // Element to display player score
   let playerScoreDiv = document.getElementById('player-score');
+
+  // Element to display system score
   let systemScoreDiv = document.getElementById('system-score');
+
+  // Element to display player and system choices
   let choiceDiv = document.getElementById('choice');
+
+  // Element to display game results
   let resultDiv = document.getElementById('result');
 
   // Check the value of playerScore to determine the game result
   if (playerScore === 1) {
+
     // Display 'You Win!' if player wins
     resultDiv.innerText = 'You Win!';
   } else if (playerScore === -1) {
+
     // Display 'You Lose!' if player loses
     resultDiv.innerText = 'You Lose!';
   } else if (playerScore === 0) {
+
     // Display "It's a Draw!" if the game is a draw
     resultDiv.innerText = "It's a Draw!";
   }
@@ -65,7 +76,7 @@ function showResult(playerScore, playerChoice, systemChoice) {
   systemScoreDiv.innerText = `System Score : ${totalScore['systemScore']}`;
 
   // Display the choices made by the player and the system
-  choiceDiv.innerHTML = `<p>&#129333; : ${playerChoice} vs &#128187; : ${systemChoice} </p>`;
+  choiceDiv.innerHTML = `<p>&#129333; : ${playerChoice} Vs &#128187; : ${systemChoice} </p>`;
 }
 
 // Function to handle button click for player's choice
@@ -95,6 +106,7 @@ function playGame() {
 
   // Attach a click event handler to each Rock, Paper, Scissors button
   rpsButtons.forEach(rpsButton => {
+
     // When a button is clicked, call the onClickRPSButton function with the button's value
     rpsButton.onclick = () => onClickRPSButton(rpsButton.value);
   });
@@ -109,10 +121,18 @@ function endGame(totalScore) {
   totalScore['playerScore'] = 0;
   totalScore['systemScore'] = 0;
 
-  // Get references to HTML elements for displaying scores and choices
+  // Retrieving HTML elements by their IDs to update game scores and display choices/results
+
+  // Element to display player score
   let playerScoreDiv = document.getElementById('player-score');
+
+  // Element to display system score
   let systemScoreDiv = document.getElementById('system-score');
+
+  // Element to display player and system choices
   let choiceDiv = document.getElementById('choice');
+
+  // Element to display game results
   let resultDiv = document.getElementById('result');
 
   // Clear the displayed scores and choices

@@ -1,8 +1,18 @@
-// Get references to HTML elements
+// Retrieving HTML input elements by their IDs
+
+// Input field for the total bill amount
 let billTotalInput = document.getElementById("billTotalInput");
+
+// Input field for the tip percentage
 let tipInput = document.getElementById("tipInput");
+
+// Input field for the number of people
 let numberOfPeople = document.getElementById("numberOfPeople");
+
+// Element to display the per-person total
 let perPersonTotal = document.getElementById("perPersonTotal");
+
+// Parsing the initial number of people as a number
 let peopleCount = Number(numberOfPeople.textContent);
 
 // Function to calculate the total bill and update the per person total
@@ -26,8 +36,10 @@ const calculateBill = () => {
 const increasePeople = () => {
     // Increment the people count
     peopleCount++;
+
     // Update the displayed number of people
     numberOfPeople.textContent = peopleCount;
+
     // Recalculate the bill
     calculateBill();
 };
@@ -38,8 +50,10 @@ const decreasePeople = () => {
     if (peopleCount > 1) {
         peopleCount--;
     }
+
     // Update the displayed number of people
     numberOfPeople.textContent = peopleCount;
+    
     // Recalculate the bill
     calculateBill();
 };

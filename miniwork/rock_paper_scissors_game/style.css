@@ -16,8 +16,8 @@ html, body {
     width: 100%;
     height: 100%;
     flex-direction: column;  /* Stack items vertically */
-    font-family: 'Lobster', sans-serif;
-    font-size: 20px;
+    font-family: 'Lobster', sans-serif; /* Setting the font family to 'Lobster' and using a fallback of sans-serif if 'Lobster' is not available */
+    font-size: 20px; /* Setting the font size to 20 pixels */
 }
 
 /* Styling for the buttons container */
