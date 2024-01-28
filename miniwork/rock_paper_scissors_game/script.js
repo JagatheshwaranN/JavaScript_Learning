@@ -1,107 +1,126 @@
-/*
-  Rock Paper Scissors 🚀🔥
-  Concepts covered in this project
-    👉 For loops
-    👉 Dom Manipulation
-    👉 Variables
-    👉 Conditionals (if else if)
-    👉 Template Literals
-    👉 Event Listeners
-    👉 Higher order Function (Math.random())
-*/
+// Object to store the total score, including player and system scores
+const totalScore = {'playerScore': 0, 'systemScore': 0 }
 
-// ** getComputerChoice randomly selects between `rock` `paper` `scissors` and returns that string **
-// getComputerChoice() 👉 'Rock'
-// getComputerChoice() 👉 'Scissors'
-const computerChoice = () => {
+// Function to get a random choice for the system (Rock, Paper, or Scissors)
+const getSystemChoice = () => {
+  // Array containing possible choices for the system
   let rps_choice = ['Rock', 'Paper', 'Scissors']
+  
+  // Generate a random index to pick a choice from the array
   const random_number = Math.floor(Math.random() * rps_choice.length)
+  
+  // Return the randomly chosen system's choice
   return rps_choice[random_number]
 }
 
-// ** getResult compares playerChoice & computerChoice and returns the score accordingly **
-// human wins - getResult('Rock', 'Scissors') 👉 1
-// human loses - getResult('Scissors', 'Rock') 👉 -1
-// human draws - getResult('Rock', 'Rock') 👉 0
-function getResult(playerChoice, computerChoice) {
-  // return the result of score based on if you won, drew, or lost
-  const score = 0
+// Function to determine the result of a round based on player and system choices
+function getResult(playerChoice, systemChoice) {
+  // Initialize the score variable
+  let score = 0;
 
-  // All situations where human draws, set `score` to 0
-  if (playerChoice == 'Rock' && computerChoice == 'Rock' || playerChoice == 'Paper' && computerChoice == 'Paper' || playerChoice == 'Scissors' && computerChoice == 'Scissors') {
-    score = 0
+  // Check if playerChoice and systemChoice are the same, indicating a draw
+  if (playerChoice === systemChoice) {
+    score = 0;
+  }
+  // Check for winning scenarios for the player
+  else if (
+    (playerChoice === 'Rock' && systemChoice === 'Scissors') ||
+    (playerChoice === 'Paper' && systemChoice === 'Rock') ||
+    (playerChoice === 'Scissors' && systemChoice === 'Paper')
+  ) {
+    // If the player wins, set the score to 1
+    score = 1;
+  }
+  // If neither a draw nor a win, the player loses, set the score to -1
+  else {
+    score = -1;
   }
 
-  // All situations where human wins, set `score` to 1
-  // make sure to use else ifs here
-  else if (playerChoice = 'Rock' && computerChoice == 'Scissors' || playerChoice == 'Paper' && computerChoice == 'Rock' || playerChoice == 'Scissors' && computerChoice == 'Paper') {
-    score = 1
-  }
-
-  // Otherwise human loses (aka set score to -1)
-  else if (playerChoice = 'Rock' && computerChoice == 'Paper' || playerChoice == 'Paper' && computerChoice == 'Scissors' || playerChoice == 'Scissors' && computerChoice == 'Rock') {
-    score = -1
-  }
-
-  // return score
-  return score
+  // Return the calculated score
+  return score;
 }
 
-// ** showResult updates the DOM to `You Win!` or `You Lose!` or `It's a Draw!` based on the score. Also shows Player Choice vs. Computer Choice**
-function showResult(score, playerChoice, computerChoice) {
-  // Hint: on a score of -1
-  // You should do result.innerText = 'You Lose!'
-  // Don't forget to grab the div with the 'result' id!
-  let handsDiv = document.getElementById('hands')
-  handsDiv.innerText = playerChoice + 'vs' + computerChoice
-  let resultDiv = document.getElementById('result')
-  if (score == 1) {
-    resultDiv.innerText = 'You Win!'
-  } else if (score == -1) {
-    resultDiv.innerText = 'You Lose!'
-  } else if (score == 0) {
-    resultDiv.innerText = "It's a Draw!"
+// Function to display the result and update the UI
+function showResult(playerScore, playerChoice, systemChoice) {
+  // Get references to HTML elements for displaying scores and choices
+  let playerScoreDiv = document.getElementById('player-score');
+  let systemScoreDiv = document.getElementById('system-score');
+  let choiceDiv = document.getElementById('choice');
+  let resultDiv = document.getElementById('result');
+
+  // Check the value of playerScore to determine the game result
+  if (playerScore === 1) {
+    // Display 'You Win!' if player wins
+    resultDiv.innerText = 'You Win!';
+  } else if (playerScore === -1) {
+    // Display 'You Lose!' if player loses
+    resultDiv.innerText = 'You Lose!';
+  } else if (playerScore === 0) {
+    // Display "It's a Draw!" if the game is a draw
+    resultDiv.innerText = "It's a Draw!";
   }
+
+  // Update the displayed scores for the player and system
+  playerScoreDiv.innerText = `Your Score : ${totalScore['playerScore']}`;
+  systemScoreDiv.innerText = `System Score : ${totalScore['systemScore']}`;
+
+  // Display the choices made by the player and the system
+  choiceDiv.innerHTML = `<p>&#129333; : ${playerChoice} vs &#128187; : ${systemChoice} </p>`;
 }
 
-// ** Calculate who won and show it on the screen **
-function onClickRPS(playerChoice) {
-  return playerChoice
+// Function to handle button click for player's choice
+function onClickRPSButton(playerChoice) {
+  // Get the system's choice
+  const systemChoice = getSystemChoice();
+
+  // Calculate the scores for the player and the system
+  const playerScore = getResult(playerChoice, systemChoice);
+  const systemScore = getResult(systemChoice, playerChoice);
+
+  // Update the total scores with the calculated scores
+  totalScore['playerScore'] += playerScore;
+  totalScore['systemScore'] += systemScore;
+
+  // Display the result, scores, and choices in the UI
+  showResult(playerScore, playerChoice, systemChoice);
 }
 
-
-// ** Make the RPS buttons actively listen for a click and do something once a click is detected **
+// Function to set up event listeners and start the game
 function playGame() {
-  // use querySelector to select all RPS Buttons
-  const buttonClicked = { "Rock": 0, "Paper": 0, "Scissors": 0 }
-  let rpsButtons = document.querySelectorAll(".rpsButton")
-  let endButton = document.getElementById("endGame")
+  // Select all buttons with class 'rpsButton'
+  let rpsButtons = document.querySelectorAll(".rpsButton");
 
-  // * Adds an on click event listener to each RPS button and every time you click it, it calls the onClickRPS function with the RPS button that was last clicked *
+  // Select the 'endGame' button
+  let endButton = document.getElementById("endGame");
 
-  // 1. loop through the buttons using a forEach loop
-  // 2. Add a 'click' event listener to each button
-  // 3. Call the onClickRPS function every time someone clicks
-  // 4. Make sure to pass the currently selected rps button as an argument
-  rpsButtons.forEach(rpsBtn => {
-    rpsBtn.onClick = () => {
-      onClickRPS(buttonClicked[rpsBtn.value])
-    }
-  })
+  // Attach a click event handler to each Rock, Paper, Scissors button
+  rpsButtons.forEach(rpsButton => {
+    // When a button is clicked, call the onClickRPSButton function with the button's value
+    rpsButton.onclick = () => onClickRPSButton(rpsButton.value);
+  });
 
-  // Add a click listener to the end game button that runs the endGame() function on click
-  endButton.onClick = () => {
-    endGame()
-  }
-
+  // Attach a click event handler to the 'endGame' button
+  endButton.onclick = () => endGame(totalScore);
 }
 
-// ** endGame function clears all the text on the DOM **
-function endGame() {
-  let handsDiv = document.getElementById('hands')
-  let resultDiv = document.getElementById('result')
-  handsDiv.innerText = ''
-  resultDiv.innerText = ''
+// Function to reset scores and UI elements when the game ends
+function endGame(totalScore) {
+  // Reset player and system scores to 0
+  totalScore['playerScore'] = 0;
+  totalScore['systemScore'] = 0;
+
+  // Get references to HTML elements for displaying scores and choices
+  let playerScoreDiv = document.getElementById('player-score');
+  let systemScoreDiv = document.getElementById('system-score');
+  let choiceDiv = document.getElementById('choice');
+  let resultDiv = document.getElementById('result');
+
+  // Clear the displayed scores and choices
+  playerScoreDiv.innerText = '';
+  systemScoreDiv.innerText = '';
+  choiceDiv.innerText = '';
+  resultDiv.innerText = '';
 }
 
+// Start the game when the script is loaded
 playGame()
