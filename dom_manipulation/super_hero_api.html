@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Hero</title>
 </head>
+
 <body>
-    
+    <div id="container">
+        <button id="randomHero">Random Hero</button>
+    </div>
+    <br />
+    <div id="imageContainer">
+        <img src="" />
+    </div>
+
 </body>
+
 </html>
 
 <script>
-    fetch('https://superheroapi.com/api.php/2570024623192033/245')
-    .then(response => response.json()).then(json => console.log(json))
+    buttonElement = document.getElementById("randomHero")
+    imageElement = document.getElementById("imageContainer")
+    buttonElement.onclick = () => getRandomSuperHero()
+    const baseURL = "https://www.superheroapi.com/api.php/"
+    const accessToken = "2570024623192033"
+    const path = "/"
+    let id = "20"
+    const getRandomSuperHero = () => {
+        fetch(baseURL + accessToken + path + `${id}`)
+            .then(response => response.json()).then(json => {
+                console.log(json.image.url)
+                imageElement.innerHTML = `<img src=${json.image.url} />`
+            })
+
+    }
 </script>
