@@ -8,35 +8,74 @@
 </head>
 
 <body>
+    <div id="search-container">
+        <input id="superHero" />
+        <button id="searchHero">Search Hero</button>
+    </div>
+    <br />
     <div id="container">
         <button id="randomHero">Random Hero</button>
     </div>
     <br />
-    <div id="imageContainer">
+    <div id="hero-info-container">
         <img src="" />
     </div>
-
 </body>
 
 </html>
 
-
-
-
 <script>
-    buttonElement = document.getElementById("randomHero")
-    imageElement = document.getElementById("imageContainer")
-    buttonElement.onclick = () => getRandomSuperHero()
+    heroInput = document.getElementById("superHero")
+    searchButton = document.getElementById("searchHero")
+    randomButton = document.getElementById("randomHero")
+    heroInfoSection = document.getElementById("hero-info-container")
+
+    searchButton.onclick = () => searchSuperHero()
+    randomButton.onclick = () => getRandomSuperHero()
+
     const baseURL = "https://www.superheroapi.com/api.php/"
     const accessToken = "2570024623192033"
     const path = "/"
-    let id = "20"
+    const searchPath = "search/"
+    const randomId = () => {
+        return Math.floor(Math.random() * 731) + 1
+    }
+
+    const searchSuperHero = () => {
+        let name = heroInput.value
+        fetch(baseURL + accessToken + path + searchPath + `${name}`)
+            .then(response => response.json())
+            .then(json => {
+                console.log(json.results[0].image.url)
+                getSuperHeroInfo(json.results[0])
+            })
+    }
+
     const getRandomSuperHero = () => {
-        fetch(baseURL + accessToken + path + `${id}`)
+        fetch(baseURL + accessToken + path + `${randomId()}`)
             .then(response => response.json()).then(json => {
                 console.log(json.image.url)
-                imageElement.innerHTML = `<img src=${json.image.url} />`
+                // heroInfoSection.innerHTML = `<img src=${json.image.url} width=300 height=300/>`
+                getSuperHeroInfo(json)
             })
 
+    }
+
+    // const statToIcon = {
+    //     "intelligence": "63",
+    //     "strength": "100",
+    //     "speed": "83",
+    //     "durability": "100",
+    //     "power": "100",
+    //     "combat": "100"
+    // }
+
+    const getSuperHeroInfo = (heroResponse) => {
+        const name = `<h2>${heroResponse.name}</h2>`
+        const image = `<img src=${heroResponse.image.url} width=300 height=300/>`
+        const stats = Object.keys(heroResponse.powerstats).map(stat => {
+            return `<p>${stat.toUpperCase()}: ${heroResponse.powerstats[stat]}</p>`
+        }).join('')
+        heroInfoSection.innerHTML = `${name}${image}${stats}`
     }
 </script>

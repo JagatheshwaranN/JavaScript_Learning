@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Dogs</title>
 </head>
+
 <body>
     <h1>Get Random Puppy Image</h1>
     <div id="button">
@@ -15,6 +17,7 @@
         <img src="" />
     </div>
 </body>
+
 </html>
 
 
@@ -23,12 +26,12 @@
     const divTag = document.getElementById('dogImage')
     const buttonTag = document.getElementById("new-dog")
     const getNewDogImage = () => {
-    fetch(apiEndPoint)
-    .then(response => response.json() )
-    .then(json => {
-        console.log(json.message)
-        divTag.innerHTML = `<img src='${json.message}' width=300 height=300 />`
-    })
-}
-buttonTag.onclick = () => getNewDogImage()
+        fetch(apiEndPoint)
+            .then(response => response.json())
+            .then(json => {
+                console.log(json.message)
+                divTag.innerHTML = `<img src='${json.message}' width=300 height=300 />`
+            })
+    }
+    buttonTag.onclick = () => getNewDogImage()
 </script>
