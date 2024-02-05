@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await Demo</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    const promiseWithoutAsync = () => {
+
+        fetch('https://dog.ceo/api/breeds/image/random') // promise
+            .then(response => response.json()) // promise
+            .then(data => console.log(data))
+    }
+    promiseWithoutAsync()
+
+    // Rules for using async / await
+    // 1. You must create a function
+    // 2. You must use the keyword async
+    // 3. You must use the keyword await
+    const asynAwaitDemo = async () => {
+        const url = 'https://dog.ceo/api/breeds/image/random'
+        const response = await fetch(url)
+        const data = await response.json()
+        console.log(data)
+    }
+    asynAwaitDemo()
+</script>

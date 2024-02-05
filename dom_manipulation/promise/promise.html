@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+
+<body>
+<h1>Promise Demo</h1>
+</body>
+
+</html>
+
+<script>
+    const promise1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            isOrderReady = [true, false][Math.floor(Math.random() * 2)]
+            isOrderReady ? resolve('Your soup is ready!!') : reject('Sorry Sir, No soup today!!')
+        }, 2000)
+    })
+    console.log(promise1
+    .then(sucess => console.log({sucess}))
+    .catch(error => console.log({error}))
+    )
+</script>
