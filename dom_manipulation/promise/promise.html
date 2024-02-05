@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<h1>Promise Demo</h1>
+    <h1>Promise Demo</h1>
 </body>
 
 </html>
@@ -21,7 +21,28 @@
         }, 2000)
     })
     console.log(promise1
-    .then(sucess => console.log({sucess}))
-    .catch(error => console.log({error}))
+        .then(sucess => console.log({ sucess }))
+        .catch(error => console.log({ error }))
     )
+
+    const getSoup = async () => {
+        const data = {rating: null, tip: null, bill: null}
+        try{
+            const soup = await promise1
+            console.log(soup)
+            data.rating = 5
+            data.tip = 0.2
+            data.bill = 10
+            return data
+        }catch(error){
+            console.log(error)
+            data.rating = 1
+            data.tip = 0
+            data.bill = 0
+            return data
+        }
+        
+    }
+
+    getSoup().then(value => console.log(value))
 </script>
