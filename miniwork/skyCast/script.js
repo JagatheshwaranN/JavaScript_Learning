@@ -62,8 +62,20 @@ const searchCity = () => {
  * HINT: make sure to console log the weatherData to see how the data looks like
  */
 const showWeatherData = (weatherData) => {
+    cityElement = document.getElementById("city-name")
+    weatherTypeElement = document.getElementById("weather-type")
+    tempElement = document.getElementById("temp")
+    minTempElement = document.getElementById("min-temp")
+    maxTempElement = document.getElementById("max-temp")
+    const fahToCelConvConst = 32
     console.log(weatherData.name)
+    console.log(weatherData.weather[0].main)
     console.log(weatherData.main.temp)
     console.log(weatherData.main.temp_min)
     console.log(weatherData.main.temp_max)
+    cityElement.textContent = weatherData.name
+    weatherTypeElement.textContent = weatherData.weather[0].main
+    tempElement.textContent = Math.round((weatherData.main.temp - fahToCelConvConst) * 5/9)
+    minTempElement.textContent = Math.round((weatherData.main.temp_min - fahToCelConvConst) * 5/9)
+    maxTempElement.textContent = Math.round((weatherData.main.temp_max - fahToCelConvConst) * 5/9)
 }
