@@ -1,81 +1,88 @@
-/**
- * Weather App
- * TODO: Complete getWeatherData() to return json response Promise
- * TODO: Complete searchCity() to get user input and get data using getWeatherData()
- * TODO: Complete showWeatherData() to set the data in the the html file from response
- */
+// Constants for the base URL, API key, and API host
+const BASE_URL = "https://open-weather13.p.rapidapi.com/city/";
+const API_KEY = '39507d026amsh728e93906c1c555p1b839cjsnf8f650992b1e';
+const API_HOST = 'open-weather13.p.rapidapi.com';
 
-/* DIV ID's you'll need access to 👇
-"city-name"
-"weather-type"
-"temp"
-"min-temp"
-"max-temp"
-*/
-
-// API_KEY for maps api
-let API_KEY = "39507d026amsh728e93906c1c555p1b839cjsnf8f650992b1e";
-
-/**
- * Retrieve weather data from openweathermap
- * HINT: Use fetch()
- * HINT: URL should look like this: 
- * https://api.openweathermap.org/data/2.5/weather?q=detroit&appid=a8e71c9932b20c4ceb0aed183e6a83bb&units=imperial
- */
-
-
-const URL = "https://open-weather13.p.rapidapi.com/city/";
+// Options for the fetch request, including headers with API key and host
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '39507d026amsh728e93906c1c555p1b839cjsnf8f650992b1e',
-        'X-RapidAPI-Host': 'open-weather13.p.rapidapi.com'
+        'X-RapidAPI-Key': API_KEY,
+        'X-RapidAPI-Host': API_HOST
     }
 }
 
-
+// Asynchronous function to fetch weather data for a given city
 const getWeatherData = async (city) => {
     try {
-        const response = await fetch(URL+city, options)
-        const result = await response.json()
-        console.log(result)
-        if(result.cod==200){
-            showWeatherData(result)
+        // Making an asynchronous fetch request to the OpenWeather API with the specified city and options
+        const response = await fetch(`${BASE_URL}${city}`, options);
+
+        // Parsing the JSON response received from the API
+        const result = await response.json();
+
+        // Checking if the response status is OK (HTTP status code 200)
+        if (response.ok) {
+            // If successful, call the function to display weather data on the webpage
+            showWeatherData(result);
+        } else {
+            // If not successful, log an error message with the API error code and message
+            console.error(`Error: ${result.cod} - ${result.message}`);
         }
     } catch (error) {
-        console.log(error)
+        // Catching any errors that may occur during the fetch or parsing process
+        console.error("Error fetching the weather data: ", error);
     }
-
 }
 
-/**
- * Retrieve city input and get the weather data
- * HINT: Use the promise returned from getWeatherData()
- */
+// Function to initiate a weather search based on user input
 const searchCity = () => {
-    const city = document.getElementById('city').value;
-    getWeatherData(city)
+    // Retrieving user input from the city input field
+    const cityInput = document.getElementById('city');
+    
+    // Trimming any leading or trailing whitespaces from the entered city name
+    const city = cityInput.value.trim();
+
+    // Checking if the entered city is valid before making the API call
+    if (isValidCity(city)) {
+        // If valid, call the function to fetch weather data for the entered city
+        getWeatherData(city);
+    } else {
+        // If not valid, log an error message in the console
+        console.error("Please enter a valid city name.");
+    }
 }
 
-/**
- * Show the weather data in HTML
- * HINT: make sure to console log the weatherData to see how the data looks like
- */
+// Function to validate if the entered city name is not empty
+const isValidCity = (city) => {
+    // Checking if the length of the entered city name is greater than 0
+    return city.length > 0;
+}
+
+// Function to display weather data on the webpage
 const showWeatherData = (weatherData) => {
-    cityElement = document.getElementById("city-name")
-    weatherTypeElement = document.getElementById("weather-type")
-    tempElement = document.getElementById("temp")
-    minTempElement = document.getElementById("min-temp")
-    maxTempElement = document.getElementById("max-temp")
-    const fahToCelConvConst = 32
-    console.log(weatherData.name)
-    console.log(weatherData.weather[0].main)
-    console.log(weatherData.main.temp)
-    console.log(weatherData.main.temp_min)
-    console.log(weatherData.main.temp_max)
-    cityElement.textContent = weatherData.name
-    weatherTypeElement.textContent = weatherData.weather[0].main
-    tempElement.textContent = Math.round((weatherData.main.temp - fahToCelConvConst) * 5/9)
-    minTempElement.textContent = Math.round((weatherData.main.temp_min - fahToCelConvConst) * 5/9)
-    maxTempElement.textContent = Math.round((weatherData.main.temp_max - fahToCelConvConst) * 5/9)
+    // Retrieving HTML elements to update with weather data
+    const cityElement = document.getElementById("city-name");
+    const weatherTypeElement = document.getElementById("weather-type");
+    const tempElement = document.getElementById("temp");
+    const minTempElement = document.getElementById("min-temp");
+    const maxTempElement = document.getElementById("max-temp");
+
+    // Updating HTML elements with relevant weather information
+    cityElement.textContent = weatherData.name;
+    weatherTypeElement.textContent = weatherData.weather[0].main;
+
+    // Converting and updating temperature values to Celsius
+    tempElement.textContent = convertToCelsius(weatherData.main.temp);
+    minTempElement.textContent = convertToCelsius(weatherData.main.temp_min);
+    maxTempElement.textContent = convertToCelsius(weatherData.main.temp_max);
+}
+
+// Function to convert temperature from Fahrenheit to Celsius
+const convertToCelsius = (fahrenheit) => {
+    // Constant for Fahrenheit to Celsius conversion
+    const fahToCelConvConst = 32;
+
+    // Formula to convert Fahrenheit to Celsius and rounding to the nearest whole number
+    return Math.round((fahrenheit - fahToCelConvConst) * 5 / 9);
 }

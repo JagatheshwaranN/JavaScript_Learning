@@ -1,9 +1,16 @@
+/* Styling for elements with IDs 'city' and 'weather-result' */
 #city, #weather-result {
     max-width: 400px;
     margin: 0 auto;
 }
-  
+
+/* Styling for elements with class 'banner' */
 .banner {
-    color: #33FFE0;
+    color: #6CDFF6;
     font-family: sans-serif;
+}
+
+/* Styling for the body element */
+body {
+    background-color: #1D1D1D;
 }
