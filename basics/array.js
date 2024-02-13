@@ -8,3 +8,10 @@ console.log(fruits.indexOf('orange'))
 console.log(fruits.length)
 console.log(fruits.pop())
 console.log(fruits)
+
+Array.prototype.myPush = function(item) {
+    this[this.length] = item
+    return this
+}
+fruits.myPush('mango')
+console.log(fruits)
