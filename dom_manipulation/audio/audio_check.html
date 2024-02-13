@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Demo</title>
+</head>
+<body>
+    <audio src = "StarWars3.wav" style="display: none;" type="audio/mpeg" id="starwar"></audio>
+</body>
+</html>
+
+<script>
+document.addEventListener('keydown', function(keypress){
+    if(keypress.key = "q"){
+        console.log("You have pressed Q")
+        document.getElementById("starwar").play()
+    }
+})
+</script>

@@ -14,7 +14,7 @@ class Bank {
     }
 
     withdraw(amount) {
-        if(this.balance > amount){
+        if(this.balance > amount || this.balance <= 0){
             this.balance -= amount
             console.log("Withdraw amount : " + amount)
         } else {
