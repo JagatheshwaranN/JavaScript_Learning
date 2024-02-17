@@ -2,52 +2,80 @@
 <html lang="en">
 
 <head>
+    <!-- Metadata for character set and viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the HTML document -->
     <title>Shadow Strikers</title>
+    <!-- Link to an external stylesheet (style.css) -->
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
+    <!-- Main body of the HTML document -->
     <br>
+    <!-- Menu section containing player information and controls -->
     <div class="menu">
+        <!-- Player 1 information -->
         <div class="p1Info">
+            <!-- Display player 1 name -->
             <div id="p1Name">Player 1</div>
-            <img id="p1" src="https://i.gifer.com/origin/00/0019f6845ceaa9347b881ccbe8f5644a_w200.gif" />
+            <!-- Display player 1 image -->
+            <img id="p1" src="gif/player1.gif" />
+            <!-- Player 1 controls for attack and heal -->
             <div class="playerControls">
+                <!-- Attack button for player 1 -->
                 <div class="attack">
                     <h3>Q:</h3>
                     <button id="attack" onclick="player1.strike(player1, player2, player1.attackDamage)">Attack</button>
                 </div>
+                <!-- Heal button for player 1 -->
                 <div class="heal">
                     <h3>A:</h3>
                     <button id="heal" onclick="player1.heal(player1)">Heal</button>
                 </div>
             </div>
+            <!-- Display player 1 health -->
             <div id="p1Health">100</div>
         </div>
+
+        <!-- Simulate button to start the game -->
         <button id="play">Simulate</button>
+
+        <!-- Player 2 information -->
         <div class="p2Info">
+            <!-- Display player 2 name -->
             <div id="p2Name">Player 2</div>
-            <img id="p2" src="https://i.imgur.com/Z0QCi47.gif" />
+            <!-- Display player 2 image -->
+            <img id="p2" src="gif/player2.gif" />
+            <!-- Player 2 controls for attack and heal -->
             <div class="playerControls">
+                <!-- Attack button for player 2 -->
                 <div class="attack">
                     <h3>P:</h3>
                     <button id="attack" onclick="player2.strike(player2, player1, player2.attackDamage)">Attack</button>
                 </div>
+                <!-- Heal button for player 2 -->
                 <div class="heal">
                     <h3>L:</h3>
                     <button id="heal" onclick="player2.heal(player2)">Heal</button>
                 </div>
-            </div>    
+            </div>
+            <!-- Display player 2 health -->
             <div id="p2Health">100</div>
         </div>
     </div>
     <br>
+
+    <!-- Result container to display game result and reset button -->
     <div class="resultContainer">
+        <!-- Display game result -->
         <div id="result"></div>
+        <!-- Reset button to reset the game -->
         <button id="reset" onclick="game.reset(p1, p2)">Reset</button>
     </div>
+
+    <!-- Audio elements for various in-game sounds -->
     <audio id="p1Attack" controls style="display: none;">
         <source src="audio/fastPunch.mp3" type="audio/mpeg">
     </audio>
@@ -63,6 +91,8 @@
     <audio id="victory" controls style="display: none;">
         <source src="audio/victory.mp3" type="audio/mpeg">
     </audio>
+
+    <!-- Link to an external JavaScript file (script.js) -->
     <script src="script.js"></script>
 </body>
 

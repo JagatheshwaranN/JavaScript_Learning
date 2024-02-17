@@ -1,16 +1,19 @@
+/* Importing the VT323 font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
+/* Styling for the body element */
 body {
-    background: 'blue';
+    background: blue;
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'VT323', monospace;
+    font-family: 'VT323', monospace; /* Applying the VT323 font to the body */
 }
 
+/* Styling for the menu section */
 .menu {
     width: 50%;
     display: flex;
@@ -18,11 +21,13 @@ body {
     align-items: center;
 }
 
+/* Styling for the player 1 image */
 #p1 {
     width: 100px;
     height: 100px;
 }
 
+/* Styling for the player 1 information section */
 .p1Info {
     display: flex;
     flex-direction: column;
@@ -32,19 +37,23 @@ body {
     width: 300px;
 }
 
+/* Styling for player 1 name */
 #p1Name {
     font-size: 30px;
 }
 
+/* Styling for player 1 health */
 #p1Health {
     font-size: 50px;
 }
 
+/* Styling for the player 2 image */
 #p2 {
     width: 100px;
     height: 100px;
 }
 
+/* Styling for the player 2 information section */
 .p2Info {
     display: flex;
     flex-direction: column;
@@ -54,20 +63,24 @@ body {
     width: 300px;
 }
 
+/* Styling for player 2 name */
 #p2Name {
     font-size: 30px;
 }
 
+/* Styling for player 2 health */
 #p2Health {
     font-size: 50px;
 }
 
+/* Styling for the player controls section */
 .playerControls {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
+/* Styling for the attack control */
 .attack {
     display: flex;
     align-items: center;
@@ -76,6 +89,7 @@ body {
     width: 100px;
 }
 
+/* Styling for the heal control */
 .heal {
     display: flex;
     align-items: center;
@@ -84,6 +98,7 @@ body {
     width: 100px;
 }
 
+/* Styling for the attack button */
 #attack {
     height: 30px;
     width: 60px;
@@ -93,6 +108,7 @@ body {
     outline: none;
 }
 
+/* Styling for the heal button */
 #heal {
     height: 30px;
     width: 60px;
@@ -102,6 +118,7 @@ body {
     outline: none;
 }
 
+/* Styling for the play button */
 #play {
     height: 50px;
     width: 120px;
@@ -111,11 +128,13 @@ body {
     color: white;
 }
 
+/* Styling for the result text */
 #result {
     font-size: 50px;
     color: #3dff3d;
 }
 
+/* Styling for the reset button */
 #reset {
     margin-top: 20px;
     height: 50px;
@@ -126,6 +145,7 @@ body {
     color: white;
 }
 
+/* Styling for the result container */
 .resultContainer {
     display: flex;
     flex-direction: column;
