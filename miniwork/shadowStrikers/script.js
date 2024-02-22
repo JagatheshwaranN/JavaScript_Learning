@@ -56,7 +56,7 @@ constructor(name, health, attackDamage) {
     // Assigning the provided 'health' parameter to the 'health' property of the instance
     this.health = health;
     
-    // Assigning the provided 'attackDamage' parameter to the 'attackDmg' property of the instance
+    // Assigning the provided 'attackDamage' parameter to the 'attackDamage' property of the instance
     this.attackDamage = attackDamage;
 }
 
@@ -200,7 +200,7 @@ playButton.onclick = () => {
     resultDiv.innerText = game.play(p1, p2);
 }
 
-// Event listener for 'p' key press, allowing Player 1 to strike
+// Event listener for 'q' key press, allowing Player 1 to strike
 document.addEventListener('keydown', function(e) {
     // Check if the pressed key is 'Q', Player 2's health is greater than 0, and the game is not over
     if (e.key == 'q' && p2.health > 0 && !game.isOver) {
