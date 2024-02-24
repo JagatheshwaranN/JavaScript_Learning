@@ -170,8 +170,6 @@ const setTrailer = trailers => {
         movieNotFound.classList.remove('d-none');
     }
 
-    // Reset the iframe source to prevent caching
-    //iframe.src = '';
 }
 
 // Function to handle the selection of a movie and display its trailer
@@ -200,4 +198,13 @@ const handleMovieSelection = element => {
 
     // Show the trailer modal using jQuery
     $('#trailerModal').modal('show');
+}
+
+// Function to reset the modal by clearing the source of the iframe
+function resetModal() {
+    // Get the iframe element by its ID
+    const iframe = document.getElementById('movieTrailer');
+
+    // Clear the source (src) of the iframe to stop video playback
+    iframe.src = '';
 }
