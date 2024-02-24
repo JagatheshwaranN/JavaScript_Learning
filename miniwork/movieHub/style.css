@@ -1,18 +1,21 @@
+/* Global styling for the body */
 body {
-    background-color: #111;
-    color: white;
-    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    margin: 0;
+    background-color: #111; /* Background color */
+    color: white; /* Text color */
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; /* Font family */
+    margin: 0; /* Remove default margin */
 }
 
+/* Styling for the dropdown container */
 .dropdown-container {
     position: absolute;
     top: 100%;
     right: 0;
     padding-top: 3px;
-    display: none;
+    display: none; /* Initially hidden */
 }
 
+/* Styling for the dropdown menu */
 .dropdown {
     background-color: black;
     padding: 8px;
@@ -21,27 +24,30 @@ body {
 }
 
 .dropdown span {
-    cursor: pointer;
+    cursor: pointer; /* Set cursor to pointer */
 }
 
+/* Styling for the MovieHub Originals section */
 .original__movies {
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
+/* Hover effect for displaying the dropdown container */
 .profile:hover .dropdown-container {
-    display: block;
+    display: block; /* Display when profile is hovered */
 }
 
+/* Styling for movie containers, handling overflow with scroll */
 .original__movies, .movies__container {
     padding-left: 50px;
     display: flex;
-    overflow-x: scroll;
+    overflow-x: scroll; /* Horizontal scroll for overflow */
     overflow: hidden;
 }
 
 .original__movies::-webkit-scrollbar {
-    display: none;
+    display: none; /* Hide the scrollbar in WebKit browsers */
 }
 
 .original__movies img {
@@ -51,10 +57,11 @@ body {
 }
 
 .original__movies img, .movies__container img {
-    transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out; /* Smooth transition for images */
     cursor: pointer;
 }
 
+/* Hover effect for scaling images on hover */
 .original__movies img:hover, .movies__container img:hover {
     transform: scale(1.1);
 }
@@ -64,6 +71,7 @@ body {
     width: 200px;
 }
 
+/* Styling for the page header */
 header {
     display: flex;
     justify-content: space-between;
@@ -82,6 +90,7 @@ header {
     width: 120px;
 }
 
+/* Styling for user profile */
 .profile {
     position: relative;
 }
@@ -94,6 +103,7 @@ img {
     width: 100px;
 }
 
+/* Styling for the featured section with background image */
 .featured {
     height: 400px;
     position: relative;
@@ -106,6 +116,7 @@ img {
     justify-content: center;
 }
 
+/* Gradient overlay for the featured section */
 .featured::after {
     content: '';
     position: absolute;
@@ -116,16 +127,19 @@ img {
     background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.61), #111);
 }
 
+/* Styling for h2 elements in MovieHub Originals and Movies sections */
 .movieHubOriginals h2, .movies__header h2 {
     padding-left: 30px;
 }
 
+/* Styling for h2 element in the featured section */
 .featured h2 {
     font-size: 50px;
     margin: 0;
     z-index: 10;
 }
 
+/* Styling for buttons in the featured section */
 .featured .featured__buttons {
     z-index: 10;
 }
@@ -139,25 +153,17 @@ img {
     border-radius: 4px;
 }
 
-.featured::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-}
-
+/* Styling for the play button in the featured section */
 .featured .featured__buttons .button__play {
     background-color: white;
     color: black;
-  }
-  
+}
+
 .button__play i {
     margin-right: 6px;
 }
 
+/* Styling for the description in the featured section */
 .featured .featured__description {
     max-width: 350px;
     font-weight: 400;
@@ -165,6 +171,7 @@ img {
     z-index: 10;
 }
 
+/* Styling for the modal body containing iframe and trailer not found message */
 .modal-body iframe {
     width: 100%;
 }
