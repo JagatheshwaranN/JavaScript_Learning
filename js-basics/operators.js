@@ -73,3 +73,118 @@ console.log('1' === 1)
 console.log(1 == 1)
 console.log('1' == 1)
 console.log(true == 1)
+
+// Ternary Operator
+
+console.log('Ternary Operator')
+let points = 110;
+let type = points > 100 ? 'Gold' : 'Silver';
+console.log(type);
+
+// Logical Operator
+
+// Logical AND, Logical OR, and Logical NOT
+
+console.log('Logical Operators')
+
+// Logical AND(&&) - Returns TRUE if both of the operands are TRUE
+let highIncome = true;
+let goodCreditScore = true;
+let eligible = highIncome && goodCreditScore;
+console.log(eligible);
+
+// Logical AND(||) - Returns TRUE if one of the operands is TRUE
+highIncome = true;
+goodCreditScore = false;
+let eligibleType = highIncome || goodCreditScore;
+console.log(eligibleType);
+
+// Logical NOT(!) - It is always the opposite.
+let applicationRefused = !eligibleType;
+console.log(applicationRefused);
+
+// NOTE: The result of the logical expression is NOT necessarily TRUE or FALSE.
+// It depends on the operands value.
+
+console.log(false || true); // Output - true
+
+// Why its John and 1?
+console.log(false || 'John'); // Output - John
+console.log(false || 1); // Output - 1
+
+// NOTE: In Javascript, we have something called Falsy and Truthy. It's not the
+// boolean TRUE or FALSE. But, it works like boolean TRUE or FALSE.
+
+// Falsy (false) - The values used in Falsy
+// Undefined
+// null
+// 0
+// false
+// ''
+// NaN
+
+// Truthy - Anything that is not Falsy is Truthy
+
+// Short-Circuiting
+console.log(false || 1 || 2); // Output - 1
+
+// The reason is, the first two operands return True, then the Logical OR will not 
+// check for rest of the operands. Becuase, if the rest of them are even True or False,
+// it is used not considered as we have the result of frist 2 operands as True.
+
+let userColor = undefined;
+let defaultColor = 'blue';
+let currentColor = userColor || defaultColor;
+console.log(currentColor);
+
+// Bitwise Operators
+
+console.log('Bitwise Operators')
+
+// 1 - 00000001
+// 2 - 00000010
+// R - 00000011 // R - Result
+ console.log(1 | 2);
+
+// 1 - 00000001
+// 2 - 00000010
+// R - 00000000
+ console.log(1 & 2);
+
+ // Realworld Usecase
+
+ // Read, Write, Execute
+ // 00000100 - Read
+ // 00000010 - Write
+ // 00000001 - Execute
+
+ const readPermission = 4;
+ const writePermission = 2;
+ const executePermission = 1;
+ let mypermission = 0;
+ mypermission = readPermission | writePermission;
+ let message = (mypermission & readPermission) ? 'Yes' : 'No';
+ console.log(message);
+
+ // Operator Precedence
+
+ x = 2 + 3 * 4;
+ console.log(x);
+
+ x = (2 + 3) * 4;
+ console.log(x);
+
+ // Swap Variables
+
+ let aa = 'red';
+ let bb = 'blue';
+ console.log(aa);
+ console.log(bb);
+ 
+ let cc = aa;
+ aa = bb;
+ bb = cc;
+ console.log(aa);
+ console.log(bb);
+
+
