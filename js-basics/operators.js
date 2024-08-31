@@ -48,7 +48,6 @@ x = x * 3;
 console.log(x *= 3);
 
 // Comparison
-
 let a = 1;
 
 // Relational Operators
@@ -64,10 +63,10 @@ console.log( a === 1)
 console.log( a !== 1)
 
 // Strict Equality Operator - Ensures both operands are of same type and same value.
-console.log(1 === 1)
-console.log('1' === 1)
+console.log(1 === 1) // True
+console.log('1' === 1) // False
 
-// Lose Equality Operator - Ensures both operands are of same value.
+// Lose Equality Operator - Ensures ONLY both operands are of same value.
 // It doesn't care about type. If the type doesn't match.
 // It will convert the type of right to match the type on left.
 console.log(1 == 1)
@@ -75,25 +74,23 @@ console.log('1' == 1)
 console.log(true == 1)
 
 // Ternary Operator
-
 console.log('Ternary Operator')
 let points = 110;
 let type = points > 100 ? 'Gold' : 'Silver';
 console.log(type);
 
 // Logical Operator
+console.log('Logical Operators')
 
 // Logical AND, Logical OR, and Logical NOT
 
-console.log('Logical Operators')
-
-// Logical AND(&&) - Returns TRUE if both of the operands are TRUE
+// Logical AND(&&) - Returns TRUE if both of the operands are TRUE.
 let highIncome = true;
 let goodCreditScore = true;
 let eligible = highIncome && goodCreditScore;
 console.log(eligible);
 
-// Logical AND(||) - Returns TRUE if one of the operands is TRUE
+// Logical OR(||) - Returns TRUE if one of the operands is TRUE.
 highIncome = true;
 goodCreditScore = false;
 let eligibleType = highIncome || goodCreditScore;
@@ -141,11 +138,13 @@ console.log(currentColor);
 
 console.log('Bitwise Operators')
 
+// If any one of the operand is 1, then the result will be 1.
 // 1 - 00000001
 // 2 - 00000010
 // R - 00000011 // R - Result
  console.log(1 | 2);
 
+ // If both of the operands are 1, then only the result will be 1.
 // 1 - 00000001
 // 2 - 00000010
 // R - 00000000
@@ -167,7 +166,7 @@ console.log('Bitwise Operators')
  console.log(message);
 
  // Operator Precedence
-
+ console.log('Operator Precendence')
  x = 2 + 3 * 4;
  console.log(x);
 
@@ -175,7 +174,7 @@ console.log('Bitwise Operators')
  console.log(x);
 
  // Swap Variables
-
+ console.log('Swap Two Variables')
  let aa = 'red';
  let bb = 'blue';
  console.log(aa);

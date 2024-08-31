@@ -97,7 +97,7 @@ function welcome(name){
 welcome('John');
 
 function square(number) {
-    return number * number
+    return number * number;
 }
 
 console.log(square(2));
