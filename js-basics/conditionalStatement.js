@@ -110,6 +110,8 @@ while( k <= 10){
     k++;
 }
 
+// Exercises
+
 // Max of two numbers
 console.log('Max of Two Numbers')
 
@@ -139,3 +141,231 @@ number = max1(20, 10);
 console.log(number);
 number = max2(20, 10);
 console.log(number);
+
+// Landscapeor Portrait
+console.log('Landscape or Portrait')
+
+function isLandscape(width, height) {
+    return (width > height); 
+}
+
+console.log(isLandscape(800, 600));
+
+// FizzBuzz
+
+// Requirement
+// Divisible by 3 => Fizz
+// Divisible by 5 => Buzz
+// Divisible by both 3 and 5 => FizzBuzz
+// Not divisible by 3 or 5 => input
+// Not a number => 'Not a number'
+console.log('FizzBuzz Algorithm')
+
+function fizzBuzz(input) {
+    if(typeof input !== 'number')
+        return NaN;
+
+    if((input % 3 === 0) && (input % 5 === 0))
+        return 'FizzBuzz';
+
+    if(input % 3 == 0)
+        return 'Fizz';
+
+    if(input % 5 == 0)
+        return 'Buzz';
+
+    return input;
+}
+
+const output = fizzBuzz(20);
+console.log(output);
+
+// Demerit Points
+
+// Requirement
+// Speed Limit = 70
+// 5 -> 1 point
+// 12 points -> License Suspended
+console.log('Demerit Points')
+
+// Approach 1
+function checkSpeed(speed) {
+    const speedLimit = 70;
+    const kmPerPoint = 5;
+    if(speed > speedLimit)
+        speedExceed = speed - speedLimit;
+        const points = Math.floor(speedExceed / kmPerPoint);
+        if(points == 0)
+            console.log('Ok');
+        else if(points >= 12)
+            console.log('License Suspended');
+        else
+        console.log('Point :',points);
+}
+
+// Approach 2
+function checkSpeed1(speed) {
+    const speedLimit = 70;
+    const kmPerPoint = 5;
+    if(speed < speedLimit + kmPerPoint) {
+        console.log('Ok');
+        return;
+    }
+    const points = Math.floor((speed - speedLimit) / kmPerPoint);
+    if(points >= 12)
+        console.log('License Suspended');
+    else
+    console.log('Point :',points);
+}
+
+checkSpeed(180);
+checkSpeed1(130);
+
+// Even or Odd
+console.log('Even or Odd');
+
+// Approach 1
+function checkAndShowNumbers(limit) {
+    for(let i = 0; i <= limit; i++) {
+        if(i % 2 === 0)
+            console.log(i, "EVEN");
+        else
+        console.log(i, "ODD");
+    }
+}
+
+// Approach 2
+function ShowNumbers(limit) {
+    for(let i = 0; i <= limit; i++) {
+        const message = (i % 2 === 0) ? 'EVEN' : 'ODD';
+        console.log(i, message);
+    }
+}
+
+checkAndShowNumbers(10);
+ShowNumbers(10);
+
+// Count Truthy
+console.log('Count Truthy')
+
+function countTruthy(array) {
+    let count = 0;
+    for(let element of array) {
+        // if(!(element === 'undefined' || element ===null || element === 0 || element === '' || element === false || element === NaN)) {
+        //     count++;
+        // }
+        if(element)
+            count++;
+    }
+    return count;
+}
+
+let array = [0, null, '', 1, 2];
+console.log(countTruthy(array));
+
+// String Properties
+console.log('String Properties');
+
+function showProperties(obj) {
+    for(let key in obj){
+        if(typeof obj[key] === 'string')
+            console.log(key, obj[key]);
+    }
+}
+
+const movie = {
+    title: 'a',
+    releaseYear : 2020,
+    rating: 4.5,
+    director: 'b'
+};
+showProperties(movie);
+
+// Multipes of 3 and 5
+
+// Requirement
+// Multiples of 3: 3, 6, 9
+// Multiples of 5: 5, 10
+console.log('Multiples of 3 and 5');
+
+function sum(limit) {
+    let sum = 0;
+
+    for(let i = 0; i <= limit; i++)
+        if((i % 3 === 0) || (i % 5 === 0))
+            sum += i; 
+    
+    return sum;
+}
+
+console.log(sum(18));
+
+// Student Grade
+
+// Requirement
+// Average = 70
+// 1 - 59: F
+// 60 - 69: D
+// 70 - 79: C
+// 80 - 89: B
+// 90 - 100: A
+console.log('Calculate Grade')
+
+function calculateGrade(marks) {
+    const average = calculateAverage(marks);
+    if(average < 60) return 'F';
+    if(average < 70) return 'D';
+    if(average < 80) return 'C';
+    return 'A';
+}
+
+function calculateAverage(array) {
+    let sum = 0;
+    for( let value of array)
+        sum += value;
+    return sum / array.length;
+}
+
+const marks = [80, 80, 80, 90, 90];
+console.log(calculateGrade(marks));
+
+// Stars
+console.log('Stars')
+
+function showStars(rows) {
+    for(let row = 1; row <= rows; row++) {
+        let pattern = '';
+        for(let i = 1; i <= row; i++) {
+            pattern += '*';
+        }
+        console.log(pattern);
+    }
+}
+
+showStars(5);
+
+// Prime Number
+
+// Requirement
+// Prime (Whose factors are only 1 and itself)
+// Composite (Which has factors other than 1 and itself)
+// Example - Prime - 11 => 1, 11
+// Example - Composite - 12 => 1, 2, 3, 4, 6, 12
+console.log('Prime Number')
+
+function showPrime(limit) {
+    for(let number = 2; number <= limit; number++)
+        if(isPrime(number))
+            console.log(number);
+    
+}
+
+function isPrime(number) {
+    for(let factor = 2; factor < number; factor++)
+        if(number % factor === 0)
+            return false;
+
+    return true;
+}
+
+showPrime(10);
