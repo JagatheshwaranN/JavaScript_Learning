@@ -112,8 +112,7 @@ const another = new Rectangle(2, 3);
 console.log(another.constructor)
 
 // Functions are Objects - Most confusing concept
-
-// 
+ 
 function Triangle(base, height) {
     this.base = base;
     this.height = height;
@@ -171,31 +170,31 @@ console.log('Value vs. Reference Types');
 let x = 10;
 let y = x;
 x = 20;
-console.log(x);
-console.log(y);
+console.log(x); // 20
+console.log(y); // 10
 
 let number = 5;
 function increase(number) {
     number++;
 }
 increase(number);
-console.log(number);
+console.log(number); // 5
 
 // Example - Reference
 let a = {value: 10};
 let b = a;
 a.value = 20;
-console.log(a);
-console.log(b);
+console.log(a); // 20
+console.log(b); // 20
 
 let numberRef = {value: 5};
 function increase(numberRef) {
     numberRef.value++;
 }
 increase(numberRef);
-console.log(numberRef);
+console.log(numberRef); // 6
 
-// Enumeration Properties of an Object
+// Enumeration of properties of an Object
 
 const circleObject = {
     radius: 1,
@@ -231,3 +230,87 @@ for( let key of Object.entries(circleObject)) {
 // To check property / method present in a Object
 if('radius' in circleObject)
     console.log('Yes');
+
+// Cloning an Object
+console.log('Cloning an Object');
+
+// Old Approach
+const anotherCircleObject = {};
+for(let key in circleObject)
+    anotherCircleObject[key] = circleObject[key];
+
+console.log(anotherCircleObject);
+
+// Modern Approach
+
+// Approach 1 - It is same as the above old approach
+const anotherCircleObject1 = Object.assign({}, circleObject);
+console.log(anotherCircleObject1);
+
+// Approach 2 - Using Spread Operator (...)
+const anotherCircleObject2 = {...circleObject};
+console.log(anotherCircleObject2);
+
+// Math Object
+console.log('Math Objects');
+
+// reference - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
+
+// We have so many Math builtin functions. We can't explore every methods.
+// Lets check few sample methods and whenever you have requirement, goto 
+// the above page and check for the Math functions.
+
+console.log(Math.PI);
+console.log(Math.random());
+console.log(Math.round(1.9));
+console.log(Math.max(1, 2, 3, 4, 5));
+
+// String Object
+console.log('String Object');
+
+// reference - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+
+// In Javascript, we have 2 types of Strings such as primitive and object.
+// String primitive
+let message = 'Hi';
+console.log(message);
+
+// String Object
+const anotherMessage = new String('Hello');
+console.log(anotherMessage);
+
+// We have so many String builtin functions. We can't explore every methods.
+// Lets check few sample methods and whenever you have requirement, goto 
+// the above page and check for the String functions.
+
+const message1 = 'This is my first message';
+console.log(message1.length);
+console.log(message1[0]);
+console.log(message1[3]);
+console.log(message1.includes('my'));
+console.log(message1.includes('the'));
+console.log(message1.startsWith('This'));
+console.log(message1.startsWith('this'));
+console.log(message1.endsWith('e'));
+
+// Template Literals
+console.log('Template Literals');
+
+// Template literals are used to make the formatting easier when compared with
+// old formatting approaches.
+
+const name = 'John';
+const tempLiteralObj = 
+`Hi ${name},
+Thanks for your time.`;
+console.log(tempLiteralObj);
+
+// Date Object
+console.log('Date Object');
+
+const now = new Date();
+const date1 = new Date('Aug 2 2020 09:00');
+const date2 = new Date(2022, 7, 3, 9);
+console.log(now.toDateString());
+console.log(now.toTimeString());
+console.log(now.toISOString());
