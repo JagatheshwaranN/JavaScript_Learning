@@ -314,3 +314,116 @@ const date2 = new Date(2022, 7, 3, 9);
 console.log(now.toDateString());
 console.log(now.toTimeString());
 console.log(now.toISOString());
+console.log(date1.toDateString());
+console.log(date2.toDateString());
+
+// Exercises
+console.log('Object Exercises')
+
+// Declare the address object and access the object from function.
+const address = {
+    street: 'St. Paul street',
+    city: 'Texas',
+    zipcode: 12345
+}
+
+function showAddress(address) {
+    for(key in address) {
+        console.log(key, address[key]);
+    }
+}
+
+showAddress(address);
+
+// Create the address object using factory and constructor.
+
+function createAddress(street, city, zipcode) {
+    return {
+        street,
+        city,
+        zipcode
+    };
+}
+
+const addressFF = createAddress('St.Peter st', 'Dallas', 98765);
+console.log(addressFF);
+
+function createAddressByConstructor(street, city, zipcode) {
+    this.street = street,
+    this.city = city,
+    this.zipcode = zipcode
+}
+
+const addressCO = new createAddressByConstructor('St.Antony st', 'Dallas', 98765);
+console.log(addressCO);
+
+// Check for the equality of the Objects.
+let address1 = createAddress('street', 'city', 12345);
+let address2 = createAddress('street', 'city', 12345);
+let address3 = address2;
+
+function areEqual(address1, address2) {
+    return address1.street == address2.street &&
+           address1.city == address2.city &&
+           address1.zipcode == address2.zipcode;
+}
+
+function areSame(address1, address2) {
+    return address1 === address2;
+}
+
+console.log(areEqual(address1, address2));
+console.log(areSame(address1, address2));
+console.log(areEqual(address2, address3));
+console.log(areSame(address2, address3));
+
+// Blogpost Object
+const blog = {
+    title: 'A',
+    body: 'B',
+    author: 'C',
+    views: 10,
+    comments: [
+        {author: 'A', body:'b'},
+        {author: 'E', body:'D'}
+    ],
+    isAlive: true
+}
+
+console.log(blog);
+
+// Constructor Functions
+const post = {
+    title: 'A',
+    body: 'B',
+    author: 'C',
+    views: 10,
+    comments: [
+        {author: 'A', body:'b'},
+        {author: 'E', body:'D'}
+    ],
+    isAlive: true
+}
+
+function Blogpost(title, body, author) {
+    this.title = title;
+    this.body = body;
+    this.author = author;
+    this.views = 0;
+    this.comments = [];
+    this.isAlive = false;
+}
+
+const blogpost = new Blogpost('title', 'body', 'author');
+console.log(blogpost);
+
+// Price Range Object
+let priceRanges = [
+    {label: '$', tooltip: 'Excellent', minPerPerson: 0, maxPerPerson: 10},
+    {label: '$$', tooltip: 'Excellent', minPerPerson: 11, maxPerPerson: 20},
+    {label: '$$$', tooltip: 'Excellent', minPerPerson: 21, maxPerPerson: 30}
+];
+
+let restaurants = [
+    {averagePerPerson: 5}
+]
