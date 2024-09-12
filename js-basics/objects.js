@@ -336,7 +336,6 @@ function showAddress(address) {
 showAddress(address);
 
 // Create the address object using factory and constructor.
-
 function createAddress(street, city, zipcode) {
     return {
         street,
@@ -354,8 +353,8 @@ function createAddressByConstructor(street, city, zipcode) {
     this.zipcode = zipcode
 }
 
-const addressCO = new createAddressByConstructor('St.Antony st', 'Dallas', 98765);
-console.log(addressCO);
+const addressCF = new createAddressByConstructor('St.Antony st', 'Dallas', 98765);
+console.log(addressCF);
 
 // Check for the equality of the Objects.
 let address1 = createAddress('street', 'city', 12345);
@@ -393,18 +392,6 @@ const blog = {
 console.log(blog);
 
 // Constructor Functions
-const post = {
-    title: 'A',
-    body: 'B',
-    author: 'C',
-    views: 10,
-    comments: [
-        {author: 'A', body:'b'},
-        {author: 'E', body:'D'}
-    ],
-    isAlive: true
-}
-
 function Blogpost(title, body, author) {
     this.title = title;
     this.body = body;
