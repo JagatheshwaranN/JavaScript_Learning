@@ -170,3 +170,149 @@ let combinedArr = firstArr.concat(secondArr);
 let slicedArr = combinedArr.slice(); 
 console.log(combinedArr);
 console.log(slicedArr);
+
+// Concatenation using Spread Operator
+console.log('Array - Concate using Spread Operator');
+
+let combinedArray = [...firstArray, ...secondArray];
+console.log(combinedArray);
+
+// Flexibility with Spread Operator is, we can add elements while combining arrays.
+let combinedArray1 = [...firstArray, 10, ...secondArray];
+console.log(combinedArray1);
+
+// Spread Operator can also be used to copy array elements
+let copyArray = [...combinedArray1];
+console.log(copyArray);
+
+// Iterating an array
+console.log('Array - Iteration');
+
+let dataSet = [1, 2, 3];
+for(let number of dataSet)
+    console.log(number);
+
+console.log('Iterate using forEach() loop')
+// Using traditional away
+dataSet.forEach(function(number) {
+    console.log(number);
+})
+
+// Using Arrow function
+dataSet.forEach(number => console.log(number));
+
+// Benefit of using forEach() is we can take index parameter.
+dataSet.forEach((number, index) => console.log(number, index));
+
+// Joining Arrays
+console.log('Array - Joining')
+
+const numberValues = [2, 3, 1];
+const joined = numberValues.join(',');
+console.log(joined);
+
+const message = 'I like Javascript';
+const parts = message.split(' ');
+console.log(parts);
+
+const combinedMessage = parts.join('-');
+console.log(combinedMessage);
+
+// Sorting an array
+console.log('Array - Sorting');
+numberValues.sort();
+console.log(numberValues);
+
+numberValues.reverse();
+console.log(numberValues);
+
+const coursesBox = [
+    {id: 1, name:'Node.js'},
+    {id: 2, name:'Angular.js'},
+];
+
+// Here, the order is not changed. The solution is as below.
+console.log(coursesBox.sort());
+
+coursesBox.sort(function(a, b) {
+    const name1 = a.name.toUpperCase();
+    const name2 = b.name.toUpperCase();
+    if(name1 < name2)
+        return -1;
+    if(name1 > name2)
+        return 1;
+    return 0;
+});
+
+console.log(coursesBox);
+
+// Testing the array elements
+console.log('Array - Testing elements')
+
+// every() - It is used to check all the elements are matching the given
+// criteria. It returns true ONLY all elements matches the criteria.
+let collector = [1, 2, 3];
+const allPositive = collector.every(function(val) {
+    return val >= 0;
+});
+console.log(allPositive);
+
+// sum() - It is used to check some of the elements are matching the given
+// criteria. It returns true even if some elements matches criteria.
+let collector1 = [-1, 2, 3];
+const atLeastOnePositive = collector1.some(function(val) {
+    return val >= 0;
+});
+console.log(atLeastOnePositive);
+
+const allPositive1 = collector1.every(function(val) {
+    return val >= 0;
+});
+console.log(allPositive1);
+
+// Filter an array
+console.log('Array - Filter elements')
+
+const valueSet = [1, -1, 2, 3];
+const filtered = valueSet.filter(value => value >= 0);
+console.log(filtered);
+
+// Mapping an array
+console.log('Array - Mapping elements')
+
+// map() is used to map each element in an array to something else.
+const valueBox = [1, 2, 3, 4];
+const itemSet = valueBox.map(v => '<li>'+v+'<\li>');
+const html = '<ul>'+itemSet.join('')+'<ul>';
+console.log(html);
+
+const itemValSet = valueBox.map(n => {
+    return {value: n};
+});
+console.log(itemValSet);
+
+// filter() and map() are return new array and not modify the original
+// array. They are chainable.
+const result = valueSet
+                    .filter(n => n >= 0)
+                    .map(n => ({value: n}))
+                    .filter(obj => obj.value > 1)
+                    .map(obj => obj.value);
+console.log(result);
+
+// Reducing an array
+console.log('Array - Reduce array')
+
+// Let us consider a scenario for the use of reduce.
+// We need to sum the elements in an array. The traditional way is below.
+const numberBox = [1, 2, -1, 3];
+let sum = 0;
+for(let n of numberBox) {
+    sum += n;
+}
+console.log(sum);
+
+// Here, comes the reduce() method which can reduce the all elements to 
+// the single element.
+const sumValue = numberBox.reduce((accumulator, currentVal) => accumulator+currentVal);
+console.log(sumValue);
