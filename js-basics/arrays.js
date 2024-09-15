@@ -427,8 +427,8 @@ function move(array, index, offset) {
 // Let say, index is 1 which has value 2 and it can be moved to 1, 2 offset position which
 // has values 3 and 4. Movement in reverse negative direction is also possible within the limit.
 
-// Here, the value whatever we choose to move, the element's current index position is updated 0 
-// and can move from its current position to length position.
+// Here, the value whatever we choose to move, the element's current index position is treated as 
+// 0 and can move from its current position to the length of array.
 function move1(array, index, offset) {
     const position = index + offset;
     if (position >= array.length || position < 0) {
@@ -483,13 +483,6 @@ function getMax(array) {
 
 // Movies
 console.log('Get the movie details')
-
-// const result = valueSet
-//     .filter(n => n >= 0)
-//     .map(n => ({ value: n }))
-//     .filter(obj => obj.value > 1)
-//     .map(obj => obj.value);
-// console.log(result);
 
 const movies = [
     { title: 'a', year: 2018, rating: 4.5 },
