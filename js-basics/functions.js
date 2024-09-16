@@ -15,7 +15,7 @@ function walk() {
 }
 
 // Function Expression
-// Function Expression is further divided into 2 types such as Anonymous and Named
+// Function Expression is further divided into 2 types such as Anonymous and Named.
 
 // Anonymous Function
 let run = function () {
@@ -71,7 +71,7 @@ console.log(sum(1, 2)); // 3
 // So, when we add number + undefined, the result is NaN.
 console.log(sum(1)); // NaN
 
-// Reason: We have didn't pass any parameters.So, it is taken as undefined.
+// Reason: We have didn't pass any parameters. So, it is taken as undefined.
 // So, when we add undefined + undefined, the result is NaN.
 console.log(sum()); // NaN
 
@@ -104,7 +104,7 @@ function sum2(...args) {
 console.log(sum2(1, 2, 3, 4, 5));
 
 // Rest Parameter must be the last parameter of the function call else it will
-// throw error. We can have zero or any parameter before the rest parameter.
+// throw error. We can have zero or any number of parameters before the rest parameter.
 
 function calculateDiscount(discount, ...prices) {
     const total = prices.reduce((a, b) => a + b);
@@ -138,4 +138,74 @@ function interest2(principal, rate = 2.5, years = 3) {
 console.log(interest2(10000));
 console.log(interest2(10000, 3.5, 5));
 
+// Getters and Setters
+console.log('Getters & Setters');
 
+// Getters => access properties.
+// Setters => change (mutate) them.
+
+const person = {
+    firstName: 'Alex',
+    lastName: 'Brown',
+    get fullName() {
+        return `${person.firstName} ${person.lastName}`;
+    },
+    set fullName(value) {
+        const parts = value.split(' ');
+        this.firstName = parts[0];
+        this.lastName = parts[1];
+    }
+};
+
+console.log(person.fullName);
+person.fullName = 'John Smith';
+console.log(person);
+console.log(person.fullName);
+
+// Try Catch
+console.log('Try Catch');
+
+// Try Catch is used to handle the exception occurs during the code execution.
+
+const employee = {
+    firstName: 'Alex',
+    lastName: 'Brown',
+    get fullName() {
+        return `${employee.firstName} ${employee.lastName}`;
+    },
+    set fullName(value) {
+        if(typeof value !== 'string')
+            throw new Error('Value is not a string.');
+        const parts = value.split(' ');
+        if(parts.length !== 2)
+            throw new Error('Enter a first and last name.');
+        this.firstName = parts[0];
+        this.lastName = parts[1];
+    }
+};
+
+try {
+    employee.fullName = '';
+} catch(e) {
+    console.log(e);
+}
+
+console.log(employee);
+
+// Local vs Global Scope
+console.log('Local vs Global Scope');
+
+// When we declare a variable outside of the block then it will be treated as
+// Global scope variable. It can be accessed anywhere in the code.
+const color = 'green';
+
+// When we declare a variable inside the block, then it will be treated as 
+// Local scope variable. It can't be accessed outside the block.
+function start() {
+    const message = 'Hi';
+    console.log(message);
+    console.log(color);
+}
+// console.log(message); // Uncaught ReferenceError: message is not defined
+console.log(color);
+start();
