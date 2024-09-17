@@ -209,3 +209,53 @@ function start() {
 // console.log(message); // Uncaught ReferenceError: message is not defined
 console.log(color);
 start();
+
+// Let vs Var
+console.log('Let vs Var');
+
+// When we declare a variable with Let keyword inside a block of a function.
+// Then, the variable can't be accessed outside of the block even inside the
+// function.
+function start() {
+    for(let i = 0; i < 5; i++) {
+        console.log(i);
+    }
+    // console.log(i); - Uncaught ReferenceError: i is not defined
+}
+start();
+
+// When we declare a variable with Var keyword inside a block of a function.
+// Then, the variable can be accessed outside of the block even inside the
+// function. i.e., the var scope is not limited to the block.
+function start1() {
+    for(var i = 0; i < 5; i++) {
+        console.log(i);
+    }
+    console.log(i);
+}
+start1();
+
+// Before ES6 (ES2015) we had only var to declare a variable in Javascript. But,
+// from ES6, we have let and const keywords.
+
+// const and let => creates block scoped variables.
+// var => creates function scoped variable.
+
+var color1 = 'red';
+let age = 30;
+
+// When we declare a var keyword outside any function, it becomes the global scope
+// and attached to the Window object. This might cause series problem. So, to avoid
+// this, we should not use var keyword.
+console.log(window.color1); // red
+
+// The variable declared using let will not add to the Window Object.
+console.log(window.age); // undefined
+
+function sayHi() {
+    console.log('Hello!')
+}
+
+// The function declared above also makes it global scope and attached to the Window
+// object. This should not be allowed. It can be avoided with the help of modules.
+window.sayHi();
