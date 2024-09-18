@@ -259,3 +259,125 @@ function sayHi() {
 // The function declared above also makes it global scope and attached to the Window
 // object. This should not be allowed. It can be avoided with the help of modules.
 window.sayHi();
+
+// This Keyword
+console.log('This Keyword');
+
+// this - The object that executing the current function.
+
+// If function is part of an object, then we call it as method. If the function is an 
+// method in an object, "this" references the object itself.
+
+// method => Object
+
+// If the function is a regular function, which means it references the global object.
+// It references the global objects (window, global).
+
+// function => global (window, global)
+
+// Example - method
+const video = {
+    title: 'JS Series',
+    play() {
+        console.log(this);
+    }
+};
+
+video.play(); // {title: 'JS Series', play: ƒ}
+
+// Here stop is a method in video object.
+video.stop = function() {
+    console.log(this);
+};
+
+video.stop(); // {title: 'JS Series', play: ƒ, stop: ƒ}
+
+// Example - function // Constructor function
+function playVideo() {
+    console.log(this); // Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+}
+
+playVideo();
+
+function Video(title) {
+    this.title = title;
+    console.log(this);
+}
+
+const v = new Video('a');
+
+const videos = {
+    title: 'JS Series',
+    tags: ['a', 'b', 'c'],
+    showTags() {
+        this.tags.forEach(function(tag) {
+            console.log(this.title, tag);
+        }, this);
+    }
+};
+
+videos.showTags();
+
+// Changing This value
+console.log('Changing "this" value');
+
+// 1. Self
+// 2. Bind
+// 3. Arrow function
+
+// Self - Not recommended Approach
+const videos1 = {
+    title: 'JS Series',
+    tags: ['a', 'b', 'c'],
+    showTags() {
+        const self = this;
+        this.tags.forEach(function(tag) {
+            console.log(self.title, tag);
+    });
+    }
+};
+
+videos1.showTags();
+
+// Bind - Another Approach
+const videos2 = {
+    title: 'JS Series',
+    tags: ['a', 'b', 'c'],
+    showTags() {
+        this.tags.forEach(function(tag) {
+            console.log(this.title, tag);
+    }.bind(this));
+    }
+};
+
+videos2.showTags();
+
+// Arrow - Another Approach
+const videos3 = {
+    title: 'JS Series',
+    tags: ['a', 'b', 'c'],
+    showTags() {
+        this.tags.forEach(tag => {
+            console.log(this.title, tag);
+    });
+    }
+};
+
+videos3.showTags();
+
+function playVideos() {
+    console.log(this);
+}
+
+playVideo.call({name: 'John'}, 1, 2);
+playVideo();
+
+// Apply takes the args as array.
+playVideo.apply({name: 'John'}, [1, 2]);
+
+// Bind returns a new function.
+const func =playVideos.bind({name: 'John'});
+func();
+
+// The above lines can be written as below.
+const func1 =playVideos.bind({name: 'John'})();
