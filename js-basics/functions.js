@@ -299,6 +299,22 @@ function playVideo() {
 
 playVideo();
 
+playVideo.call({name: 'John'}, 1, 2);
+
+// Apply takes the args as array.
+playVideo.apply({name: 'John'}, [1, 2]);
+
+function playVideos() {
+    console.log(this);
+}
+
+// Bind returns a new function.
+const func = playVideos.bind({name: 'John'});
+func();
+
+// The above lines can be written as below.
+const func1 = playVideos.bind({name: 'John'})();
+
 function Video(title) {
     this.title = title;
     console.log(this);
@@ -365,19 +381,49 @@ const videos3 = {
 
 videos3.showTags();
 
-function playVideos() {
-    console.log(this);
+// Function Exercises
+console.log('Function Exercises');
+
+console.log('Sum of Given Numbers');
+// sum([1, 2, 3, 4]) => 10
+
+console.log(sumNumbers(1, 2, 3, 4));
+console.log(sumNumbers([1, 2, 3, 4]));
+
+function sumNumbers(...items) {
+    if(items.length === 1 && Array.isArray(items[0]))
+        items = [...items[0]];
+    return items.reduce((accumulator, currentValue) => accumulator + currentValue);    
 }
 
-playVideo.call({name: 'John'}, 1, 2);
-playVideo();
+console.log('Circle Object');
 
-// Apply takes the args as array.
-playVideo.apply({name: 'John'}, [1, 2]);
+const circleObj = {
+    radius: 1,
+    get area() {
+        return Math.PI * this.radius * this.radius;
+    }
+}
 
-// Bind returns a new function.
-const func =playVideos.bind({name: 'John'});
-func();
+circleObj.radius = 2;
+console.log(circleObj.area);
 
-// The above lines can be written as below.
-const func1 =playVideos.bind({name: 'John'})();
+console.log('Error Handling');
+try {
+    const dataVault = [1, 2, 3, 4, 1];
+    const count = countOccurrence(null, 1);
+    console.log(count);    
+}
+catch(e) {
+    console.log(e.message);
+}
+
+function countOccurrence(array, searchElement) {
+    if(!Array.isArray(array)){
+        throw new Error('Invalid array.');
+    }
+    return array.reduce((accumulator, currentVal) => {
+        const occurrence = (currentVal === searchElement) ? 1 : 0;
+        return accumulator + occurrence;
+    }, 0);
+}
