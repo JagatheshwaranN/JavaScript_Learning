@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <meta name="description" content="Practice Test Automation" />
+    <meta name="author" content="Jaga" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../asset/learn-everyday.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/index.css" type="text/css" />
+    <link rel="stylesheet" href="../css/buttons.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Button - Learn Everyday</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../practice.html">Play Ground</a></li>
+          <li><a href="../about.html">About Me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Let's automate the Buttons.</h1>
+      <section>
+        <div class="container">
+          <!-- Left Section (Buttons) -->
+          <div class="buttons-section">
+            <button class="button" id="clickButton">Click Button</button>
+            <button class="button" id="dblClickButton">
+              Double Click Button
+            </button>
+            <button class="button" id="holdButton">
+              Click and Hold Button
+            </button>
+            <button class="button" id="hoverClickButton">
+              Hover and Click Button
+            </button>
+            <button class="button" id="rightClickButton">
+              Right Click Button
+            </button>
+            <button class="button disabled" id="disabledButton" disabled>
+              Disabled Button
+            </button>
+          </div>
+          <!-- Right Section (Selenium Methods) -->
+          <div class="selenium-methods">
+            <div class="method">
+              <h3>Click Button</h3>
+              <pre>click();</pre>
+            </div>
+            <div class="method">
+              <h3>Double Click Button</h3>
+              <pre>doubleClick();</pre>
+            </div>
+            <div class="method">
+              <h3>Click and Hold Button</h3>
+              <pre>clickAndHold();</pre>
+            </div>
+            <div class="method">
+              <h3>Hover and Click Button</h3>
+              <pre>moveToElement().click();</pre>
+            </div>
+            <div class="method">
+              <h3>Right Click Button</h3>
+              <pre>contextClick();</pre>
+            </div>
+            <div class="method">
+              <h3>Disabled Button</h3>
+              <pre>
+Disabled buttons cannot be clicked using Selenium, but you can verify if it's disabled.</pre
+              >
+              <pre>
+boolean isDisabled = disabledButton.getAttribute("disabled") != null;</pre
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Learn Everyday &copy; Copyright 2025</p>
+    </footer>
+  </body>
+</html>

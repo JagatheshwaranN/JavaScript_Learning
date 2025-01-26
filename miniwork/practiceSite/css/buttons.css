@@ -1,0 +1,74 @@
+/* buttons.css */
+
+  /* Left Section (Buttons) */
+  .buttons-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
+    padding: 20px;
+  }
+  
+  .button {
+    padding: 8px 16px; /* Smaller button size */
+    font-size: 14px; /* Smaller text */
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px; /* Fixed width for the buttons */
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  .button:active {
+    background-color: #004080;
+  }
+  
+  .disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .button:focus {
+    outline: none;
+  }
+  
+  /* Right Section (Selenium Methods) */
+  .selenium-methods {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+  }
+  
+  .method {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .method h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #007bff;
+  }
+  
+  .method pre {
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+  }
+  
