@@ -34,14 +34,15 @@
         <div class="container">
           <!-- Left Section (Buttons) -->
           <div class="buttons-section">
-            <button class="button" id="clickButton">Click Button</button>
-            <button class="button" id="dblClickButton">
+            <button class="button" id="clickButton" onclick="clickFuncResult('click')">
+              Click Button</button>
+            <button class="button" id="dblClickButton" ondblclick="clickFuncResult('dblClick')">
               Double Click Button
             </button>
-            <button class="button" id="holdButton">
+            <button class="button" id="holdButton" >
               Click and Hold Button
             </button>
-            <button class="button" id="hoverClickButton">
+            <button class="button" id="hoverClickButton" >
               Hover and Click Button
             </button>
             <button class="button" id="rightClickButton">
@@ -54,40 +55,18 @@
           <!-- Right Section (Selenium Methods) -->
           <div class="selenium-methods">
             <div class="method">
-              <h3>Click Button</h3>
-              <pre>click();</pre>
+              <h3>Result Section</h3>
+              <p id="result">Your result will display here..</p>
             </div>
             <div class="method">
-              <h3>Double Click Button</h3>
-              <pre>doubleClick();</pre>
+              <p><strong>Note:</strong> Disabled buttons cannot be clicked using Selenium, but you can verify if it's disabled. Using the getAttribute() method.</p>
             </div>
-            <div class="method">
-              <h3>Click and Hold Button</h3>
-              <pre>clickAndHold();</pre>
-            </div>
-            <div class="method">
-              <h3>Hover and Click Button</h3>
-              <pre>moveToElement().click();</pre>
-            </div>
-            <div class="method">
-              <h3>Right Click Button</h3>
-              <pre>contextClick();</pre>
-            </div>
-            <div class="method">
-              <h3>Disabled Button</h3>
-              <pre>
-Disabled buttons cannot be clicked using Selenium, but you can verify if it's disabled.</pre
-              >
-              <pre>
-boolean isDisabled = disabledButton.getAttribute("disabled") != null;</pre
-              >
-            </div>
-          </div>
         </div>
       </section>
     </main>
     <footer>
       <p>Learn Everyday &copy; Copyright 2025</p>
     </footer>
+    <script src="../script/buttons.js"></script>
   </body>
 </html>
