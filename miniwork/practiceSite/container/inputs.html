@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <meta name="description" content="Practice Test Automation" />
+    <meta name="author" content="Jaga" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../asset/learn-everyday.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/index.css" type="text/css" />
+    <link rel="stylesheet" href="../css/inputs.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Inputs - Learn Everyday</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../practice.html">Play Ground</a></li>
+          <li><a href="../about.html">About Me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <!-- Left Section -->
+      <section class="left-section">
+        <h2>Input Fields</h2>
+        <div class="input-container">
+          <label for="normalInput">Normal Input Box:</label>
+          <input
+            type="text"
+            id="normalInput"
+            class="input-box"
+            placeholder="Type here..."
+            value=""
+            oninput="updateResult('normalInput')"
+          />
+        </div>
+        <div class="input-container">
+          <label for="prefilledInput">Input Box with Prefilled Value:</label>
+          <input
+            type="text"
+            id="prefilledInput"
+            class="input-box"
+            value="Never Give"
+            oninput="updateResult('prefilledInput')"
+          />
+          <p>
+            <strong>Note:</strong> Complete the quote -
+            <strong><span class="highlight">Never Give Up</span></strong>
+          </p>
+        </div>
+        <div class="input-container">
+          <label for="clearInput">Input Box To Clear Value:</label>
+          <input
+            type="text"
+            id="clearInput"
+            class="input-box"
+            value="Please Clear Me!"
+            oninput="updateResult('clearInput')"
+          />
+        </div>
+        <div class="input-container">
+          <label for="readonlyInput">Input Box with Readonly Value:</label>
+          <input
+            type="text"
+            id="readonlyInput"
+            class="input-box"
+            value="Input box is readonly"
+            readonly
+          />
+        </div>
+        <div class="input-container">
+          <label for="disabledInput">Disabled Input Box:</label>
+          <input
+            type="text"
+            id="disabledInput"
+            class="input-box"
+            value="Input box is disabled"
+            disabled
+          />
+        </div>
+      </section>
+      <!-- Right Section -->
+      <section class="right-section">
+        <h2>Result Section</h2>
+        <div class="result-div">
+          <p id="result">Your result will display here..</p>
+        </div>
+        <div class="result-div">
+          <p>
+            <strong>Note:</strong> Disabled input box cannot be operated using
+            Selenium, but you can verify if it's disabled. Using the
+            getAttribute() method.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Learn Everyday &copy; Copyright 2025</p>
+    </footer>
+    <script src="../script/inputs.js"></script>
+  </body>
+</html>

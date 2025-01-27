@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-    <title>Button - Learn Everyday</title>
+    <title>Buttons - Learn Everyday</title>
   </head>
   <body>
     <header>
@@ -28,39 +28,59 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <h1>Let's automate the Buttons.</h1>
-      <section>
-        <div class="container">
-          <!-- Left Section (Buttons) -->
-          <div class="buttons-section">
-            <button class="button" id="clickButton" onclick="clickFuncResult('click')">
-              Click Button</button>
-            <button class="button" id="dblClickButton" ondblclick="clickFuncResult('dblClick')">
-              Double Click Button
-            </button>
-            <button class="button" id="holdButton" >
-              Click and Hold Button
-            </button>
-            <button class="button" id="hoverClickButton" >
-              Hover and Click Button
-            </button>
-            <button class="button" id="rightClickButton">
-              Right Click Button
-            </button>
-            <button class="button disabled" id="disabledButton" disabled>
-              Disabled Button
-            </button>
-          </div>
-          <!-- Right Section (Selenium Methods) -->
-          <div class="selenium-methods">
-            <div class="method">
-              <h3>Result Section</h3>
-              <p id="result">Your result will display here..</p>
-            </div>
-            <div class="method">
-              <p><strong>Note:</strong> Disabled buttons cannot be clicked using Selenium, but you can verify if it's disabled. Using the getAttribute() method.</p>
-            </div>
+    <main class="container">
+      <section class="left-section">
+        <h2>Buttons</h2>
+        <!-- Left Section (Buttons) -->
+        <div class="button-container">
+          <button
+            class="button"
+            id="clickButton"
+            onclick="clickFuncResult('click')"
+          >
+            Click Button
+          </button>
+        </div>
+        <div class="button-container">
+          <button
+            class="button"
+            id="dblClickButton"
+            ondblclick="clickFuncResult('dblClick')"
+          >
+            Double Click Button
+          </button>
+        </div>
+        <div class="button-container">
+          <button class="button" id="holdButton">Click and Hold Button</button>
+        </div>
+        <div class="button-container">
+          <button class="button" id="hoverClickButton">
+            Hover and Click Button
+          </button>
+        </div>
+        <div class="button-container">
+          <button class="button" id="rightClickButton">
+            Right Click Button
+          </button>
+        </div>
+        <div class="button-container">
+          <button class="button disabled" id="disabledButton" disabled>
+            Disabled Button
+          </button>
+        </div>
+      </section>
+      <!-- Right Section (Selenium Methods) -->
+      <section class="right-section">
+        <h2>Result Section</h2>
+        <div class="result-div">
+          <p id="result">Your result will display here..</p>
+        </div>
+        <div class="result-div">
+          <p>
+            <strong>Note:</strong> Disabled buttons cannot be clicked using
+            Selenium, but you can verify if it's disabled. Using the
+            getAttribute() method.
+          </p>
         </div>
       </section>
     </main>

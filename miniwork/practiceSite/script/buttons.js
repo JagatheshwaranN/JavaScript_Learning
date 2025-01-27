@@ -1,17 +1,17 @@
-var resultSection = document.getElementById("result");
-var holdButton = document.getElementById("holdButton");
-var hoverClickButton = document.getElementById("hoverClickButton");
-var rightClickButton = document.getElementById("rightClickButton");
-var holdTimer;
-var isHolding = false;
-var hasHeldFor5Seconds = false;
-var isHovered = false;
+let resultSection = document.getElementById("result");
+let holdButton = document.getElementById("holdButton");
+let hoverClickButton = document.getElementById("hoverClickButton");
+let rightClickButton = document.getElementById("rightClickButton");
+let holdTimer;
+let isHolding = false;
+let hasHeldFor5Seconds = false;
+let isHovered = false;
 
 function clickFuncResult(clickType) {
   if (clickType === "click") {
-    resultSection.textContent = "Hurry! you have clicked the button.";
+    resultSection.textContent = "Hooray! you have clicked the button.";
   } else if (clickType === "dblClick") {
-    resultSection.textContent = "Hurry! you have double-clicked the button.";
+    resultSection.textContent = "Hooray! you have double-clicked the button.";
   }
 }
 
@@ -22,7 +22,7 @@ holdButton.addEventListener("mousedown", function () {
     if (isHolding) {
       hasHeldFor5Seconds = true;
       resultSection.textContent =
-        "Hurry! you have held the button for 5 seconds.";
+        "Hooray! you have held the button for 5 seconds.";
     }
   }, 5000);
 });
@@ -45,7 +45,7 @@ holdButton.addEventListener("mouseleave", function () {
 
 hoverClickButton.addEventListener("mouseover", function () {
   isHovered = true;
-  resultSection.textContent = "Hovered over the button.";
+  resultSection.textContent = "Hooray! you have hovered over the button.";
 });
 
 hoverClickButton.addEventListener("mouseout", function () {
@@ -55,13 +55,14 @@ hoverClickButton.addEventListener("mouseout", function () {
 
 hoverClickButton.addEventListener("click", function () {
   if (isHovered) {
-    resultSection.textContent = "Hurry! you hovered and clicked the button.";
+    resultSection.textContent =
+      "Hooray! you have hovered and clicked the button.";
   } else {
-    resultSection.textContent = "You clicked the button without hovering.";
+    resultSection.textContent = "You have clicked the button without hovering.";
   }
 });
 
-rightClickButton.addEventListener('contextmenu', function() {
-    event.preventDefault();
-    resultSection.textContent="Hurry! you right-clicked the button."
-})
+rightClickButton.addEventListener("contextmenu", function () {
+  event.preventDefault();
+  resultSection.textContent = "Hooray! you have right-clicked the button.";
+});
