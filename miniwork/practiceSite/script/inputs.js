@@ -1,7 +1,7 @@
-let resultSection = document.getElementById("result");
+const resultSection = document.getElementById("result");
 
 function updateResult(inputId) {
-  let inputValue = document.getElementById(inputId).value;
+  const inputValue = document.getElementById(inputId).value;
   if (inputId === "normalInput") {
     resultSection.textContent = inputValue
       ? `You typed: ${inputValue}`

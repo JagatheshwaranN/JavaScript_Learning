@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <meta name="description" content="Practice Test Automation" />
+    <meta name="author" content="Jaga" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../asset/learn-everyday.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/index.css" type="text/css" />
+    <link rel="stylesheet" href="../css/dropdowns.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />  -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+    <title>Dropdowns - Learn Everyday</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../playground.html">Play Ground</a></li>
+          <li><a href="../about.html">About Me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <main class="container">
+        <section class="left-section">
+          <h2>Dropdowns</h2>
+          <div class="dropdown-container">
+            <div>
+              <label for="normalDropdown">Normal Dropdown:</label>
+            </div>
+            <select id="normalDropdown" class="dropdown">
+              <option value="mon">Monday</option>
+              <option value="tue">Tuesday</option>
+              <option value="wed">Wednesday</option>
+            </select>
+          </div>
+          <div class="dropdown-container">
+            <div>
+              <label for="multiSelectDropdown">Multi Select Dropdown:</label>
+            </div>
+            <select id="multiSelectDropdown" class="dropdown" multiple>
+              <option value="jan">January</option>
+              <option value="feb">February</option>
+              <option value="mar">March</option>
+              <option value="apr">April</option>
+              <option value="may">May</option>
+            </select>
+          </div>
+          <!-- Bootstrap-like Dropdown -->
+          <div class="dropdown-container">
+            <div>
+              <label for="bootstrapDropdown">Bootstrap-style Dropdown:</label>
+            </div>
+            <div class="bootstrap-dropdown">
+              <button
+                class="bootstrap-btn"
+                id="dropdownButton"
+                onclick="toggleDropdown()"
+              >
+                Select Season
+              </button>
+              <ul class="bootstrap-menu" id="dropdownMenu">
+                <li>
+                  <a
+                    href="#"
+                    class="bootstrap-item"
+                    onclick="selectOption('Spring')"
+                    >Spring</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="bootstrap-item"
+                    onclick="selectOption('Summer')"
+                    >Summer</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="bootstrap-item"
+                    onclick="selectOption('Autumn')"
+                    >Autumn</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="bootstrap-item"
+                    onclick="selectOption('Winter')"
+                    >Winter</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="right-section">
+          <h2>Result Section</h2>
+          <div class="result-div">
+            <p id="result">Your result will display here..</p>
+          </div>
+        </section>
+      </main>
+    </main>
+    <footer>
+      <p>Learn Everyday &copy; Copyright 2025</p>
+    </footer>
+    <script src="../script/dropdowns.js"></script>
+  </body>
+</html>

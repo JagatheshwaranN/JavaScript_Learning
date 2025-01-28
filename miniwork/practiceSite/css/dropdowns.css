@@ -1,0 +1,118 @@
+/* Left section styles */
+.left-section {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.left-section h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Dropdown styles */
+.dropdown-container {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.dropdown {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.dropdown[multiple] {
+    height: auto;
+}
+
+/* Bootstrap Dropdown Styles */
+.bootstrap-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.bootstrap-btn {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.bootstrap-btn:hover {
+    background-color: #0056b3;
+}
+
+.bootstrap-menu {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+/* Remove the hover-based dropdown behavior */
+.bootstrap-menu li {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.bootstrap-menu li:last-child {
+    border-bottom: none;
+}
+
+.bootstrap-item {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.bootstrap-item:hover {
+    background-color: #f1f1f1;
+    color: #007bff;
+}
+
+/* Show the dropdown when the 'show' class is added */
+.bootstrap-menu.show {
+    display: block;
+}
+
+/* Right section styles */
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+}
+
+.result-div {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
