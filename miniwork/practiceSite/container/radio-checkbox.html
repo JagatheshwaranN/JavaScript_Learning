@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <meta name="description" content="Practice Test Automation" />
+    <meta name="author" content="Jaga" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../asset/learn-everyday.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/index.css" type="text/css" />
+    <link rel="stylesheet" href="../css/radio-checkbox.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Radios & Checkboxes - Learn Everyday</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../playground.html">Play Ground</a></li>
+          <li><a href="../about.html">About Me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="left-section">
+        <h2>Radio Buttons & Checkboxes</h2>
+        <div class="radio-container">
+            <p>
+            <label for="gender" class="gender">Gender Type:</label>
+            </p>
+            <label><input type="radio" name="gender" id="male" value="Male" onclick="updateResult()"> Male</label>
+            <label><input type="radio" name="gender" id="female" value="Female" onclick="updateResult()"> Female</label>
+            <label><input type="radio" name="gender" value="Other" onclick="updateResult()"> Other</label>
+        </div>
+        <div class="checkbox-container">
+            <p>
+            <label for="travel" class="travel">Travel Type:</label>
+            </p>
+            <label><input type="checkbox" name="travel" value="Bike" onclick="updateResult()"> Bike</label>
+            <label><input type="checkbox" name="travel" value="Car" onclick="updateResult()"> Car</label>
+            <label><input type="checkbox" name="travel" value="Bus" onclick="updateResult()"> Bus</label>
+        </div>
+      </section>
+      <section class="right-section">
+        <h2>Result Section</h2>
+        <div class="result-div">
+          <p id="result">Your result will display here..</p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Learn Everyday &copy; Copyright 2025</p>
+    </footer>
+    <script src="../script/radio-checkbox.js"></script>
+  </body>
+</html>

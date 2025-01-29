@@ -16,12 +16,6 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-    <!-- <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    />  -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
     <title>Dropdowns - Learn Everyday</title>
   </head>
   <body>
@@ -34,90 +28,133 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <main class="container">
-        <section class="left-section">
-          <h2>Dropdowns</h2>
-          <div class="dropdown-container">
-            <div>
-              <label for="normalDropdown">Normal Dropdown:</label>
-            </div>
-            <select id="normalDropdown" class="dropdown" onchange="updateResult('normalDropdown')">
-              <option value="sel">Select Day</option>
-              <option value="mon">Monday</option>
-              <option value="tue">Tuesday</option>
-              <option value="wed">Wednesday</option>
-            </select>
+    <main class="container">
+      <section class="left-section">
+        <h2>Dropdowns</h2>
+        <div class="dropdown-container">
+          <div>
+            <label for="normalDropdown">Normal Dropdown:</label>
           </div>
-          <div class="dropdown-container">
-            <div>
-              <label for="multiSelectDropdown">Multi Select Dropdown:</label>
-            </div>
-            <select id="multiSelectDropdown" class="dropdown" multiple onchange="updateResult('multiSelectDropdown')">
-              <option value="jan">January</option>
-              <option value="feb">February</option>
-              <option value="mar">March</option>
-              <option value="apr">April</option>
-              <option value="may">May</option>
-            </select>
+          <select
+            id="normalDropdown"
+            class="dropdown"
+            onchange="updateResult('normalDropdown')"
+          >
+            <option value="sel">Select Day</option>
+            <option value="mon">Monday</option>
+            <option value="tue">Tuesday</option>
+            <option value="wed">Wednesday</option>
+          </select>
+        </div>
+        <div class="dropdown-container">
+          <div>
+            <label for="multiSelectDropdown">Multi Select Dropdown:</label>
           </div>
-          <!-- Bootstrap-like Dropdown -->
-          <div class="dropdown-container">
-            <div>
-              <label for="bootstrapDropdown">Bootstrap-style Dropdown:</label>
-            </div>
-            <div class="bootstrap-dropdown">
-              <button
-                class="bootstrap-btn"
-                id="dropdownButton"
-                onclick="toggleDropdown()"
-              >
-                Select Season
-              </button>
-              <ul class="bootstrap-menu" id="dropdownMenu">
-                <li>
-                  <a
-                    href="#"
-                    class="bootstrap-item"
-                    onclick="selectOption('Spring')"
-                    >Spring</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="bootstrap-item"
-                    onclick="selectOption('Summer')"
-                    >Summer</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="bootstrap-item"
-                    onclick="selectOption('Autumn')"
-                    >Autumn</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="bootstrap-item"
-                    onclick="selectOption('Winter')"
-                    >Winter</a
-                  >
-                </li>
-              </ul>
-            </div>
+          <select
+            id="multiSelectDropdown"
+            class="dropdown"
+            multiple
+            onchange="updateResult('multiSelectDropdown')"
+          >
+            <option value="jan">January</option>
+            <option value="feb">February</option>
+            <option value="mar">March</option>
+            <option value="apr">April</option>
+            <option value="may">May</option>
+          </select>
+        </div>
+        <div class="dropdown-container">
+          <div>
+            <label for="inputDropdown">Input Dropdown:</label>
           </div>
-        </section>
-        <section class="right-section">
-          <h2>Result Section</h2>
-          <div class="result-div">
-            <p id="result">Your result will display here..</p>
+          <input
+            type="text"
+            name="direction"
+            class="dropdown"
+            id="inputDropdown"
+            list="inputDropdownList"
+            onchange="updateResult('inputDropdown')"
+          />
+          <datalist id="inputDropdownList" class="dropdown">
+            <option value="North"></option>
+            <option value="East"></option>
+            <option value="West"></option>
+            <option value="South"></option>
+          </datalist>
+        </div>
+        <div class="dropdown-container">
+          <div>
+            <label for="optionTagDropdown">Section Dropdown:</label>
           </div>
-        </section>
-      </main>
+          <select
+            id="optionTagDropdown"
+            class="dropdown"
+            onchange="updateResult('optionTagDropdown')"
+          >
+            <option value="sel">Select</option>
+            <optgroup label="Planets">
+              <option value="mer">Mercury</option>
+              <option value="ven">Venus</option>
+              <option value="ear">Earth</option>
+            </optgroup>
+          </select>
+        </div>
+        <!-- Bootstrap-like Dropdown -->
+        <div class="dropdown-container">
+          <div>
+            <label for="bootstrapDropdown">Bootstrap-style Dropdown:</label>
+          </div>
+          <div class="bootstrap-dropdown">
+            <button
+              class="bootstrap-btn"
+              id="dropdownButton"
+              onclick="toggleDropdown()"
+            >
+              Select Season
+            </button>
+            <ul class="bootstrap-menu" id="dropdownMenu">
+              <li>
+                <a
+                  href="#"
+                  class="bootstrap-item"
+                  onclick="selectOption('Spring')"
+                  >Spring</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="bootstrap-item"
+                  onclick="selectOption('Summer')"
+                  >Summer</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="bootstrap-item"
+                  onclick="selectOption('Autumn')"
+                  >Autumn</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="bootstrap-item"
+                  onclick="selectOption('Winter')"
+                  >Winter</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="right-section">
+        <h2>Result Section</h2>
+        <div class="result-div">
+          <p id="result">Your result will display here..</p>
+        </div>
+      </section>
     </main>
     <footer>
       <p>Learn Everyday &copy; Copyright 2025</p>

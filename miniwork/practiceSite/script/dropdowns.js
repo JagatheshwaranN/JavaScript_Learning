@@ -6,7 +6,18 @@ function updateResult(dropdownType) {
     const normalDropdown = document.getElementById("normalDropdown");
     var selectedOption = normalDropdown.options[normalDropdown.selectedIndex].text;
     resultSection.textContent = `You have selected: ${selectedOption}`;
-  } else if(dropdownType === 'multiSelectDropdown'){
+  }
+  else if(dropdownType === 'optionTagDropdown') {
+    const optionTagDropdown = document.getElementById("optionTagDropdown");
+    var selectedOption = optionTagDropdown.options[optionTagDropdown.selectedIndex].text;
+    resultSection.textContent = `You have selected: ${selectedOption}`;
+  }
+  else if(dropdownType === 'inputDropdown') {
+    const optionTagDropdown = document.getElementById("inputDropdown");
+    var selectedOption = optionTagDropdown.value;
+    resultSection.textContent = `You have selected: ${selectedOption}`;
+  }
+  else if(dropdownType === 'multiSelectDropdown'){
     const multiSelectDropdown = document.getElementById("multiSelectDropdown");
     var selectedOptions = Array.from(multiSelectDropdown.selectedOptions).map(option => option.text);
     if(selectedOptions.length > 0){
