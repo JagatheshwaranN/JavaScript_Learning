@@ -1,5 +1,21 @@
 const resultSection = document.getElementById("result");
 
+
+function updateResult(dropdownType) {
+  if(dropdownType === 'normalDropdown') {
+    const normalDropdown = document.getElementById("normalDropdown");
+    var selectedOption = normalDropdown.options[normalDropdown.selectedIndex].text;
+    resultSection.textContent = `You have selected: ${selectedOption}`;
+  } else if(dropdownType === 'multiSelectDropdown'){
+    const multiSelectDropdown = document.getElementById("multiSelectDropdown");
+    var selectedOptions = Array.from(multiSelectDropdown.selectedOptions).map(option => option.text);
+    if(selectedOptions.length > 0){
+      resultSection.textContent = `You have selected: ${selectedOptions.join(", ")}`;
+    }
+  }
+}
+
+// Bootstrap Dropdown
 function toggleDropdown() {
     const dropdownMenu = document.getElementById("dropdownMenu");
     dropdownMenu.classList.toggle("show");

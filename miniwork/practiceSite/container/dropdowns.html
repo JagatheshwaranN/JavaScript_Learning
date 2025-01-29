@@ -42,7 +42,8 @@
             <div>
               <label for="normalDropdown">Normal Dropdown:</label>
             </div>
-            <select id="normalDropdown" class="dropdown">
+            <select id="normalDropdown" class="dropdown" onchange="updateResult('normalDropdown')">
+              <option value="sel">Select Day</option>
               <option value="mon">Monday</option>
               <option value="tue">Tuesday</option>
               <option value="wed">Wednesday</option>
@@ -52,7 +53,7 @@
             <div>
               <label for="multiSelectDropdown">Multi Select Dropdown:</label>
             </div>
-            <select id="multiSelectDropdown" class="dropdown" multiple>
+            <select id="multiSelectDropdown" class="dropdown" multiple onchange="updateResult('multiSelectDropdown')">
               <option value="jan">January</option>
               <option value="feb">February</option>
               <option value="mar">March</option>
