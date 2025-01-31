@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="Practice Test Automation" />
+    <meta name="author" content="Jaga" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../asset/learn-everyday.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../../css/frames.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Parent Frame</title>
+  </head>
+  <body>
+    <main>
+      <h2>Parent Frame</h2>
+      <div class="parentFrame">
+        <label for="username">Enter UserName:</label>
+        <input type="text" id="username" oninput="updateParentResult()" />
+      </div>
+      <div class="frame-container">
+        <iframe
+          src="../frames/child-frame.html"
+          id="childFrame"
+          name="ChildFrame"
+        ></iframe>
+      </div>
+    </main>
+    <script src="../../script/frames.js"></script>
+  </body>
+</html>

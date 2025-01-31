@@ -1,0 +1,94 @@
+/* Left section styles */
+.left-section {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.left-section h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Styling for iframe */
+.frame-container iframe {
+    width: 100%;
+    height: 350px;
+    /* Increased height for better visibility */
+    border: 2px solid #36454F;
+    /* Styled border for the iframe */
+    border-radius: 8px;
+    /* Rounded corners */
+    margin-top: 15px;
+    /* Extra space between elements */
+}
+
+#childFrame {
+    width: 90%;
+    /* Smaller width for child frame */
+    height: 150px;
+    /* Smaller height for child frame */
+    border: 2px solid #36454F;
+    /* Different border color for better visibility */
+    border-radius: 8px;
+}
+
+/* Styling for inputs */
+input[type="text"] {
+    width: 70%;
+    /* Full width for inputs */
+    padding: 10px;
+    /* Added padding for comfort */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* Rounded corners for inputs */
+    font-size: 1rem;
+    /* Ensuring font size is comfortable */
+    margin-top: 10px;
+    /* Space above the input field */
+}
+
+input[type="text"]:focus {
+    border-color: #71797E;
+    outline: none;
+    box-shadow: 0 0 5px rgba(113, 121, 126, 0.5);
+}
+
+/* Optional: Styling for labels */
+label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    /* Space between label and input */
+    display: block;
+}
+
+.parentFrame {
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Right section styles */
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+}
+
+.result-div {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
