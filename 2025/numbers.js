@@ -27,8 +27,8 @@ console.log(Number.parseInt("1234.56asd")); // 1234
 console.log(Number.parseInt("1234aa.56asd")); // 1234
 console.log(Number.parseInt("aa1234aa.56asd")); //NaN
 console.log(Number.parseFloat("1234.098asd")); // 1234.098
-console.log(Number.parseFloat("1234.098asd").toFixed(2)); // 1234.098
+console.log(Number.parseFloat("1234.098asd").toFixed(2)); // 1234.09
 console.log(typeof myFloat.toString());
 console.log(Number.isNaN(10));
 console.log(Number.isNaN("Hello"));
-console.log(isNaN("Dhuddu"));
+console.log(isNaN("Hai"));
