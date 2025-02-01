@@ -1,0 +1,52 @@
+/* Left section styles */
+.left-section {
+  flex: 1;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.left-section h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.windows-container {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #A9F5A9;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 200px;
+}
+
+.button:hover {
+  background-color: #81F781;
+}
+
+/* Right section styles */
+.right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+}
+
+.result-div {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
