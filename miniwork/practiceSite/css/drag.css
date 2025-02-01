@@ -1,0 +1,71 @@
+/* Left section styles */
+.left-section {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.left-section h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.drag-drop-container {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.drag-box {
+    width: 200px;
+    height: 100px;
+    background-color: #baf95b;
+    color: white;
+    padding: 0;
+    /* Remove padding */
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    /* Use flexbox */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+}
+
+
+.drop-box {
+    width: 200px;
+    height: 150px;
+    background-color: #f1f1f1;
+    border: 2px dashed #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.drop-box:hover {
+    background-color: #dcdcdc;
+}
+
+/* Right section styles */
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+}
+
+.result-div {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
