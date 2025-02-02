@@ -21,33 +21,33 @@ for (a = 0; a <= 10; a++) {
 
 // Break
 let b = 0;
-while(b < 6) {
-    if( b == 3){
-        break;
-    }
-    b = b+1;
+while (b < 6) {
+  if (b == 3) {
+    break;
+  }
+  b = b + 1;
 }
 console.log(b);
 
 // Continue
 b = 0;
-while(b < 6) {
-    if( b == 3){
-        b = b+1;
-        continue;
-    }
-    console.log(b); //  0, 1, 2, 4, 5
-    b = b+1;
+while (b < 6) {
+  if (b == 3) {
+    b = b + 1;
+    continue;
+  }
+  console.log(b); //  0, 1, 2, 4, 5
+  b = b + 1;
 }
 
 let c = 0;
-let text = '';
-while(c < 5) {
-    if(c === 3){
-        c++;
-        continue;
-    }
-    text = text + c;
+let text = "";
+while (c < 5) {
+  if (c === 3) {
     c++;
+    continue;
+  }
+  text = text + c;
+  c++;
 }
-console.log(text); //  0, 1, 2
+console.log(text); //  0124

@@ -21,12 +21,12 @@ console.log(getUserNameFromMail("abc@gmail.com"));
 console.log(getUserNameFromMail("qwerty@gmail.com"));
 console.log(getUserNameFromMail("john@gmail.com"));
 
-// Function to transform the string into Propercase
+// Function to transform the string to Propercase
 
 function toProperCase(data) {
   let firstChar = data.charAt(0).toUpperCase();
-  let remainingChar = data.slice(1).toLowerCase();
-  return firstChar + remainingChar;
+  let remainingChars = data.slice(1).toLowerCase();
+  return firstChar + remainingChars;
 }
 console.log(toProperCase("javaScript"));
 console.log(toProperCase("typeScript"));
@@ -35,14 +35,14 @@ console.log(toProperCase("typeScript"));
 
 const toPropercase = function (data) {
   let firstChar = data.charAt(0).toUpperCase();
-  let remainingChar = data.slice(1).toLowerCase();
-  return firstChar + remainingChar;
+  let remainingChars = data.slice(1).toLowerCase();
+  return firstChar + remainingChars;
 };
 console.log(toPropercase("java"));
 
 const topropercase = (data) => {
   let firstChar = data.charAt(0).toUpperCase();
-  let remainingChar = data.slice(1).toLowerCase();
-  return firstChar + remainingChar;
+  let remainingChars = data.slice(1).toLowerCase();
+  return firstChar + remainingChars;
 };
 console.log(toPropercase("script"));

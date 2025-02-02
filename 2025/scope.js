@@ -28,6 +28,7 @@ function myFunction() {
     console.log(k);
 }
 myFunction();
+
 console.log(i);
 console.log(j);
 console.log(k);
