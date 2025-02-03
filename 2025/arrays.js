@@ -26,16 +26,16 @@ console.log(arrays);
 arrays.shift("Thanks");
 console.log(arrays);
 
-// When we add items to the array from and print it, it will display the length.
+// When we add items to the array from end / front and print it, it will display the length.
 let lastItem = arrays.push("one");
 console.log(lastItem);
 console.log(arrays);
 
 let firstItem = arrays.unshift("Ten");
-console.log(lastItem);
+console.log(firstItem);
 console.log(arrays);
 
-// When we delete items from the array dnd print it, it will display the de;eted item.
+// When we delete items from the array and print it, it will display the deleted item.
 let delLastItem = arrays.pop();
 console.log(delLastItem);
 
