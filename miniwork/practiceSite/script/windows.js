@@ -21,6 +21,6 @@ function openWindowAsWindow() {
 }
 
 function updateResult(message) {
-  let resultSection = document.getElementById("result");
+  const resultSection = document.getElementById("result");
   resultSection.textContent = message;
 }

@@ -1,0 +1,88 @@
+  /* Left Section (Buttons) */
+  .left-section {
+      flex: 1;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .left-section h2 {
+      margin-bottom: 20px;
+      color: #333;
+  }
+
+  /* Right section styles */
+  .right-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+      background-color: #f1f1f1;
+      border-radius: 8px;
+  }
+
+  .result-div {
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+  }
+
+  .date-picker-container {
+      margin-bottom: 20px;
+  }
+
+  label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+  }
+
+  /* Modern Date Picker Styling */
+  .date-picker {
+      width: 50%;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #36454F;
+      border-radius: 6px;
+      outline: none;
+      transition: 0.3s;
+      margin-bottom: 30px;
+  }
+
+  .date-picker:hover,
+  .date-picker:focus {
+      border-color: #4CAF50;
+      box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+  }
+
+  /* Flatpickr Custom Styling */
+  .flatpickr-calendar {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 6px;
+      padding: 10px;
+      background: #fff;
+  }
+
+  .flatpickr-day.selected {
+      background: #2196F3 !important;
+      color: white !important;
+  }
+
+  .flatpickr-months {
+      background: linear-gradient(to right, #4CAF50, #2196F3);
+      color: white;
+      border-radius: 6px 6px 0 0;
+      padding: 8px 0;
+  }
+
+  /* Flatpickr Navigation Arrows */
+  .flatpickr-prev-month,
+  .flatpickr-next-month {
+      transform: rotate(0deg);
+      /* Ensure left/right navigation */
+      font-size: 20px;
+      cursor: pointer;
+  }

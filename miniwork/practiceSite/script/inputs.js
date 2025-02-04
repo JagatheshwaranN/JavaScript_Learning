@@ -14,9 +14,5 @@ function updateResult(inputId) {
     if (inputValue.trim() === "") {
       resultSection.textContent = "Input cleared!";
     }
-    //   else {
-    //     // For any other input
-    //     resultSection.textContent = `Current value in ${inputId}: ${inputValue}`;
-    //   }
   }
 }

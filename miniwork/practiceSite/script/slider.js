@@ -1,5 +1,5 @@
 function updateResult() {
-  let slider = document.getElementById("slider");
+  const slider = document.getElementById("slider");
   let sliderValue = slider.value;
   // document.getElementById('sliderValue').innerText = sliderValue;
   document.getElementById(

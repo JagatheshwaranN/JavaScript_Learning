@@ -2,10 +2,10 @@ const resultSection = document.getElementById("result");
 const holdButton = document.getElementById("holdButton");
 const hoverClickButton = document.getElementById("hoverClickButton");
 const rightClickButton = document.getElementById("rightClickButton");
-const holdTimer = "";
-const isHolding = false;
-const hasHeldFor5Seconds = false;
-const isHovered = false;
+let holdTimer = "";
+let isHolding = false;
+let hasHeldFor5Seconds = false;
+let isHovered = false;
 
 function clickFuncResult(clickType) {
   if (clickType === "click") {
