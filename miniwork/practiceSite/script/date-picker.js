@@ -4,6 +4,7 @@ function updateResult(dateStr) {
 
 flatpickr("#singleDatePicker", {
   dateFormat: "d/m/Y", // Set to DD/MM/YYYY format
+  // minDate: "today", 
   defaultDate: new Date(), // Show today's date by default
   prevArrow: "←", // Set left arrow
   nextArrow: "→", // Set right arrow
@@ -15,6 +16,7 @@ flatpickr("#singleDatePicker", {
 flatpickr("#dualDatePicker", {
   mode: "single",
   dateFormat: "d/m/Y", // Set to DD/MM/YYYY format
+  // minDate: "today", 
   defaultDate: new Date(), // Show today's date by default
   showMonths: 2, // Dual Month Layout
   prevArrow: "←", // Set left arrow
