@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <meta name="description" content="Practice Test Automation" />
+    <meta name="author" content="Jaga" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../asset/learn-everyday.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/index.css" type="text/css" />
+    <link rel="stylesheet" href="../css/tables.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Tables - Learn Everyday</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../playground.html">Play Ground</a></li>
+          <li><a href="../about.html">About Me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="left-section">
+        <h2>Tables</h2>
+        <div class="table-container">
+          <h3>Study Timetable</h3>
+          <table class="normal-table">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Morning</th>
+                <th>Afternoon</th>
+                <th>Evening</th>
+                <th>Night</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monday</td>
+                <td>Physics</td>
+                <td>Chemistry</td>
+                <td>Science</td>
+                <td>Maths</td>
+              </tr>
+              <tr>
+                <td>Tuesday</td>
+                <td>Science</td>
+                <td>Chemistty</td>
+                <td>Maths</td>
+                <td>Physics</td>
+              </tr>
+              <tr>
+                <td>Wednesday</td>
+                <td>Maths</td>
+                <td>Science</td>
+                <td>Physics</td>
+                <td>Chemistry</td>
+              </tr>
+              <tr>
+                <td>Thursday</td>
+                <td>Chemistry</td>
+                <td>Maths</td>
+                <td>Science</td>
+                <td>Physics</td>
+              </tr>
+              <tr>
+                <td>Friday</td>
+                <td>Physics</td>
+                <td>Science</td>
+                <td>Chemistry</td>
+                <td>Maths</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-container">
+          <h3>Group Selection</h3>
+          <table class="advanced-table">
+            <thead>
+              <tr>
+                <th>Subject 1</th>
+                <th>Subject 2</th>
+                <th>Subject 3</th>
+                <th>Select</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Math</td>
+                <td>Physics</td>
+                <td>Chemistry</td>
+                <td><input type="checkbox" /></td>
+              </tr>
+              <tr>
+                <td>Biology</td>
+                <td>Geography</td>
+                <td>Economics</td>
+                <td><input type="checkbox" /></td>
+              </tr>
+              <tr>
+                <td>Computer Science</td>
+                <td>Statistics</td>
+                <td>Business Studies</td>
+                <td><input type="checkbox" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-container">
+          <h3>Stationery Price List</h3>
+          <table class="sortable-table">
+            <thead>
+              <tr>
+                <th onclick="sortTable(0)">Stationery Item ⬍</th>
+                <th onclick="sortTable(1)">Quantity ⬍</th>
+                <th onclick="sortTable(2)">Price ⬍</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pencil</td>
+                <td>10</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>Notebook</td>
+                <td>5</td>
+                <td>50</td>
+              </tr>
+              <tr>
+                <td>Eraser</td>
+                <td>20</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>Pen</td>
+                <td>15</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>Sharpener</td>
+                <td>8</td>
+                <td>7</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="right-section">
+        <h2>Instructions</h2>
+        <p>✔ The first table is a simple study timetable.</p>
+        <p>✔ The second table allows students to select a group of subjects.</p>
+        <p>✔ The third table supports sorting by clicking on column headers.</p>
+      </section>
+    </main>
+    <footer>
+      <p>Learn Everyday &copy; Copyright 2025</p>
+    </footer>
+    <script src="../script/tables.js"></script>
+  </body>
+</html>
