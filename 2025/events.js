@@ -99,3 +99,4 @@ const initApp = () => {
         text === "Welcome!" ? event.target.textContent = "Hello!" : event.target.textContent = "Welcome!";
     }, true)
 }
+
