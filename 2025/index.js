@@ -1,11 +1,12 @@
+// ********************* DOM *********************
 const view1 = document.getElementById("view1");
 console.log(view1);
 
 const view2 = document.querySelector("#view2");
 console.log(view2);
 
-view1.style.display = "flex";
-view2.style.display = "flex";
+// view1.style.display = "flex";
+// view2.style.display = "flex";
 
 // HTMLCollection (Live Collection)
 // **********************************
@@ -39,9 +40,11 @@ for(i = 0; i < evenDivs.length; i++) {
     evenDivs[i].style.width="150px";
 }
 
+// Change of h1 text content
 const navText = document.querySelector("nav h1");
 navText.textContent = "Hello Buddy!";
 
+// Change of h1 element
 const navbar = document.querySelector("nav");
 navbar.innerHTML = "<h1>Welcome!</h1>";
 
@@ -58,3 +61,47 @@ console.log(evenDivs[0].nextSibling);
 console.log(evenDivs[0].nextElementSibling);
 console.log(evenDivs[2].previousSibling);
 console.log(evenDivs[2].previousElementSibling);
+
+// Temp - hide view1 and show view2
+view1.style.display="none";
+view2.style.display="flex";
+
+view2.style.flexDirection = "row";
+view2.style.frlexwrap = "wrap";
+view2.style.margin = "10px";
+
+// Removing the H2 element
+console.log(view2.lastElementChild);
+view2.lastElementChild.remove();
+
+// Creating new element
+// const newDiv = document.createElement("div");
+// newDiv.textContent = "Hello!";
+// newDiv.style.width = "100px";
+// newDiv.style.height = "100px"
+// newDiv.style.backgroundColor = "yellow";
+// newDiv.style.color = "black";
+// newDiv.style.display = "flex";
+// newDiv.style.justifyContent = "center";
+// newDiv.style.alignItems = "center";
+// view2.append(newDiv);
+
+// Conversion of above code into fucntion
+const createDiv = (parent, iterator) =>{
+const newDiv = document.createElement("div");
+newDiv.textContent = iterator;
+newDiv.style.width = "100px";
+newDiv.style.height = "100px"
+newDiv.style.margin = "10px";
+newDiv.style.backgroundColor = "yellow";
+newDiv.style.color = "black";
+newDiv.style.display = "flex";
+newDiv.style.justifyContent = "center";
+newDiv.style.alignItems = "center";
+parent.append(newDiv);
+}
+
+for(let i = 1; i <= 10; i++){
+    createDiv(view2, i);
+}
+
