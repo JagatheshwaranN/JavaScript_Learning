@@ -154,8 +154,90 @@
             </tbody>
           </table>
         </div>
+        <div class="table-container">
+          <div class="table-controls">
+            <div class="rows-per-page-container">
+              <label for="rowsPerPage">Show</label>
+              <select id="rowsPerPage">
+                <option value="2">2</option>
+                <option value="4">4</option>
+                <option value="6">6</option>
+              </select>
+              <label>entries</label>
+            </div>
+            <input type="text" id="searchInput" placeholder="Search table.." />
+          </div>
+          <table id="advancedTable">
+            <thead>
+              <tr>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Smartphone</td>
+                <td>Electronics</td>
+                <td>$599</td>
+              </tr>
+              <tr>
+                <td>Laptop</td>
+                <td>Electronics</td>
+                <td>$999</td>
+              </tr>
+              <tr>
+                <td>Headphones</td>
+                <td>Accessories</td>
+                <td>$199</td>
+              </tr>
+              <tr>
+                <td>Keyboard</td>
+                <td>Accessories</td>
+                <td>$49</td>
+              </tr>
+              <tr>
+                <td>Desk Chair</td>
+                <td>Furniture</td>
+                <td>$149</td>
+              </tr>
+              <tr>
+                <td>Tablet</td>
+                <td>Electronics</td>
+                <td>$399</td>
+              </tr>
+              <tr>
+                <td>Monitor</td>
+                <td>Electronics</td>
+                <td>$299</td>
+              </tr>
+              <tr>
+                <td>Backpack</td>
+                <td>Accessories</td>
+                <td>$79</td>
+              </tr>
+              <tr>
+                <td>Desk Lamp</td>
+                <td>Furniture</td>
+                <td>$39</td>
+              </tr>
+              <tr>
+                <td>Wireless Mouse</td>
+                <td>Accessories</td>
+                <td>$29</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="table-footer">
+            <span id="entriesInfo">Showing 1 to 2 of 10 entries</span>
+            <div class="pagination">
+              <button id="prevPage">←</button>
+              <button id="pageNumber">1</button>
+              <button id="nextPage">→</button>
+            </div>
+          </div>
+        </div>
       </section>
-
       <section class="right-section">
         <h2>Instructions</h2>
         <p>✔ The first table is a simple study timetable.</p>

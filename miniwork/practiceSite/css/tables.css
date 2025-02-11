@@ -63,3 +63,65 @@
       transform: scale(1.2);
       cursor: pointer;
   }
+
+  /* Most Advanced Table */
+  .table-controls {
+      display: flex;
+      justify-content: space-between;
+      /* Push elements apart */
+      align-items: center;
+      /* Keep them aligned */
+      margin-bottom: 10px;
+  }
+
+  .rows-per-page-container {
+      display: flex;
+      align-items: center;
+      /* Ensures elements stay on the same line */
+      gap: 10px;
+      /* Adjust spacing between elements */
+      margin-bottom: 10px;
+      /* Ensure proper spacing from other elements */
+  }
+
+  #rowsPerPage {
+      padding: 4px;
+      font-size: 14px;
+  }
+
+  label,
+  select {
+      display: inline-block;
+      vertical-align: middle;
+  }
+
+  select,
+  input {
+      padding: 5px;
+      font-size: 14px;
+  }
+
+  .table-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+  }
+
+  .pagination {
+      display: flex;
+      align-items: center;
+  }
+
+  .pagination button {
+      padding: 5px 10px;
+      border: none;
+      background: #2196F3;
+      color: white;
+      cursor: pointer;
+      margin: 0 5px;
+  }
+
+  .pagination button:hover {
+      background: #1976D2;
+  }
