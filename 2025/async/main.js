@@ -13,7 +13,7 @@
 // 3 states: Pending / Fulfilled / Rejected.
 
 const myPromise = new Promise((resolve, reject) => {
-  const error = true;
+  const error = false;
   if (!error) {
     resolve("Yes, resolved the Promise");
   } else {
@@ -21,11 +21,22 @@ const myPromise = new Promise((resolve, reject) => {
   }
 });
 
+const myNexPromise = new Promise((resolve, reject)=> {
+  setTimeout(function() {
+    resolve('My next promise resolved');
+  }, 3000
+  )
+})
+
 // The below code will print state of the Promise.
-console.log(myPromise);
+// console.log(myPromise);
 
 // To get the value of the promise.
 // myPromise.then(val => console.log(val));
+
+myNexPromise.then((val) => {
+  console.log(val);
+})
 
 // Promise Chaining to get the value of promise.
 myPromise
@@ -38,3 +49,4 @@ myPromise
   .catch((err) => {
     console.log(err);
   });
+
