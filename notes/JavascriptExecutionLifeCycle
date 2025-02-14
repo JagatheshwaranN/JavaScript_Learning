@@ -1,0 +1,55 @@
+JavaScript Code Execution Lifecycle
+===================================
+JavaScript execution happens in two main stages:
+
+1. Parsing & Compilation (Preparation Phase)
+2. Execution & Optimization (Running the Code)
+
+Step-by-Step Breakdown
+=======================
+1. Parsing & Compilation (Pre-Execution Stage)
+==============================================
+When you write JavaScript code, it is not directly executed line-by-line like traditional interpreted languages. Instead, modern JavaScript engines (like V8, SpiderMonkey, JavaScriptCore) use Just-In-Time (JIT) compilation.
+
+Here's what happens:
+====================
+(a) Lexical Analysis (Tokenization)
+===================================
+The JavaScript engine scans your code and breaks it into tokens (keywords, operators, literals, etc.).
+Example:
+let x = 10;
+Tokens: let, x, =, 10;
+
+(b) Parsing (Abstract Syntax Tree - AST)
+========================================
+The engine parses the tokens and creates an AST (Abstract Syntax Tree).
+Example AST for let x = 10;
+VariableDeclaration
+ ├── Identifier (x)
+ ├── NumericLiteral (10)
+
+(c) Bytecode Compilation (JIT Compilation)
+==========================================
+JavaScript is not fully interpreted. Instead, modern engines compile JavaScript into an intermediate form (called bytecode).
+This is done by the Ignition Interpreter (in V8) or equivalent in other engines.
+The bytecode is then sent for execution.
+
+2. Execution & Optimization (Running the Code)
+==============================================
+Once the bytecode is ready, it enters the execution phase.
+
+(a) Execution in the JavaScript Engine
+======================================
+The Ignition Interpreter starts executing the bytecode.
+The Call Stack and Heap Memory manage execution flow.
+
+(b) Optimization with JIT Compilation
+=====================================
+TurboFan (V8) optimizes frequently used code using JIT (Just-In-Time Compilation).
+It converts frequently executed functions into highly optimized machine code.
+Example: If a loop runs multiple times, TurboFan optimizes it to run faster.
+
+(c) Garbage Collection (Memory Optimization)
+============================================
+The Orinoco Garbage Collector in V8 removes unused variables from memory.
+This prevents memory leaks.
