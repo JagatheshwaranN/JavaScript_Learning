@@ -1,0 +1,45 @@
+Coming to your explanation—this is a really good understanding of Closures! 🔥👏
+You’ve covered:
+✅ Function inside a function
+✅ Access to outer function variables (Lexical Environment)
+✅ Preserving data even after outer function execution
+✅ Use cases like encapsulation & private variables
+
+Just one small clarification:
+=============================
+"Closures don’t create a copy of variables; they keep a reference to them."
+This means if the variable changes later, the closure will reflect that change.
+
+Your understanding is great, but there's one small mistake in your code:
+function greeting() {
+    let name = "Jaga";
+    return function displayName() {
+        console.log(`Hello! ${name}`);
+    }
+}
+greeting();
+
+You called greeting();, but you didn't store or invoke the inner function.
+
+function greeting() {
+    let name = "Jaga"; // Outer function variable
+    return function displayName() { // Inner function (Closure)
+        console.log(`Hello! ${name}`); // Accessing outer variable
+    }
+}
+const greet = greeting(); // `greeting()` returns `displayName` function
+greet(); // Now calling the returned function
+
+Explanation:
+1️⃣ greeting() runs and creates a Lexical Scope with name = "Jaga".
+2️⃣ It returns the displayName function, which still remembers name.
+3️⃣ We store it in greet.
+4️⃣ When we call greet(), it still has access to name, even though greeting() has 
+finished execution.
+
+🚀 Real-World Application of Closures
+Closures are super useful in real-world scenarios, like:
+✅ Data Encapsulation & Private Variables
+✅ Event Handlers & Callbacks
+✅ Maintaining State in Functional Programming
+✅ Creating Singleton Patterns in JavaScript
