@@ -1,0 +1,89 @@
+Buddy! Let's focus on JavaScript objects. I'll review your understanding, provide refinements, and then present a challenge to solidify your knowledge.
+Your Understanding
+
+You've grasped that:
+1. Objects in JavaScript are collections of key-value pairs.
+2. They help reduce code duplication and promote reusability.
+3. The syntax involves keys and values separated by colons (:) and pairs separated by commas (,).
+
+Refinements
+To enhance your understanding, consider the following points:
+
+Object Definition:
+While many entities in JavaScript behave like objects, it's more precise to say that objects are a fundamental data type used to store collections of data and functionalities.
+
+Creating Objects:
+Object Literals: The most common way to create objects.
+Constructor Functions: Used to create multiple similar objects.
+
+let car1 = {
+  make: "Toyota",
+  model: "Sedan",
+  year: 2022,
+  compareYear: function (otherCar) {
+    // if(this.year != null && otherCar.year !=null) { - My Logic
+    if(typeof this.year !== number && typeof otherCar.year !==number) { - Robust Logic
+    if (this.year > otherCar.year) {
+      return "Newer";
+    } else if (otherCar.year > this.year) {
+      return "Older";
+    } else {
+      return "Same";
+    }
+    } else {
+        return `Car 1 Year: ${this.year} or Car 2 Year: ${otherCar.year} is null / undefined`;
+    }
+  },
+};
+
+let car2 = {
+  make: "BMW",
+  model: "SUV",
+  year: undefined
+};
+
+console.log(car1.compareYear(car2));
+
+NaN is a special case in JavaScript—it is not equal to anything, even itself (NaN !== NaN).
+To catch NaN, use Number.isNaN(value), which explicitly checks for NaN.
+
+let car1 = {
+  make: "Toyota",
+  model: "Sedan",
+  year: 2022,
+  compareYear: function (otherCar) {
+    // if(this.year != null && otherCar.year !=null) {
+    if (typeof this.year !== "number" || typeof otherCar.year !== "number") {
+      return `Invalid Year Value : Car 1 Year: ${this.year} or Car 2 Year: ${otherCar.year}`;
+    }
+    if (this.year > otherCar.year) {
+      return "Newer";
+    } else if (otherCar.year > this.year) {
+      return "Older";
+    } else {
+      return "Same";
+    }
+  },
+};
+
+let car2 = {
+  make: "BMW",
+  model: "SUV",
+  year: undefined,
+};
+
+let car3 = {
+  make: "BMW",
+  model: "SUV",
+  year: null,
+};
+
+let car4 = {
+  make: "BMW",
+  model: "SUV",
+  year: NaN,
+};
+
+console.log(car1.compareYear(car2));
+console.log(car1.compareYear(car3));
+console.log(car1.compareYear(car4)); // Prints Same

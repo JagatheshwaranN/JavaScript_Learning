@@ -1,3 +1,8 @@
+// In JavaScript, objects are fundamental building blocks that allow you to group related 
+// data and functions. They consist of key-value pairs, where each key (also known as a 
+// property) is a string, and the value can be of any data type, including functions. This
+// structure helps in organizing code and promoting reusability.
+
 // NOTE: We can't access the below code snippet on BROWSER console as it not in global
 // scope.
 // Fixes: Change the object type from const -> var. var has global scope.
