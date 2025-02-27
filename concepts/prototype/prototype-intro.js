@@ -20,7 +20,7 @@ myObject.greet();
 // that all objects have by default. 
 // Object.getPrototypeOf(myObject);
 
-// When the below code is executed on the  Browser console, we can see the
+// When the above code is executed on the Browser console, we can see the
 // below values.
 //{__defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ,
 //  __lookupSetter__: ƒ, …}constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()
@@ -52,4 +52,3 @@ do {
 // This code creates a Date object, then walks up the prototype chain, logging the 
 // prototypes. It shows us that the prototype of myDate is a Date.prototype object, 
 // and the prototype of that is Object.prototype.
-
